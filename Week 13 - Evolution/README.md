@@ -29,3 +29,6 @@ The main question in this problem is how to avoid building the array multiple ti
 
 ## Storage of results
 Since we stored all the queries and execute/calculate them in different order (as we traverse the tree using DFS) we also need to store the results. Once we calculate all of them we print them in the right order.
+
+# Additional ideas
+DFS is performed using implicit call stack. Should the graph be a sequential list with big depth we could run out of stack memory and have stack overflow. Using explicig stack would mitigate this problem.
