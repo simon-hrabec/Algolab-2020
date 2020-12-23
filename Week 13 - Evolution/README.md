@@ -1,5 +1,5 @@
 # Evolution - solution
-This problem requires a lot of data structures, out of order computation of the queries, and DFS on the graph. There is no clear approach. There is a lot of options but but most them under scrutiny show degradation to N^2 worst case. The shown solution includes the following steps/techniques:
+This problem requires a lot of data structures, out of order computation of the queries, and DFS on the graph. There is no clear approach. There is a lot of options but most them under scrutiny show degradation to N^2 worst case. The shown solution includes the following steps/techniques:
 
 - Translation of names to indices
 - Modeling the problem
