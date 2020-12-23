@@ -14,7 +14,8 @@ The main idea in this problem is to use binary search on the value K. In each st
 
 The only thing to do is for given K and calculated C specify the update rules for "high" and "low". We have only 3 options:
 1. K == C - We found the result/optimal value. Decreasing K would decrease the result (since it is min(C,K)) and increasing K is also of no avail as it could only decrease C.
-2. K < C - We can increase 
+2. K < C - We can increase K to potentially better result. We can also cap upper bound (for K) to C since making it bigger would give no benefit.
+3. K > C - We can decrease K to potentially better result. We also know that K cannot be smaller than C since decreasing K to C would make C to be same or grow, therefore going with K even lower would lead to no gain.
 
 ## Delaunay triangulation for graph construction
 
