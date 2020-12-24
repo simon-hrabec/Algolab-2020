@@ -29,3 +29,9 @@ When checking if potential edges from the Delaunay triangulation do exist (have 
 
 # Additional ides
 The binary search could be altered. Instead of starting in the middle (with potentially big number) we could check for values in the sequence 2, 4, 8, 16, 32... and once we find upper bound process with regular binary search (reducing interval rather than expanding it). If the result is small (e.g. R is small and the biggest connected component in the whole graph has size 3) we could finish quickly. The biggest difference is that checking for small values is cheap whereas checking for large values is expensive and hence if can be avoided it can lead to speedup. This approach can lead to increase in total check but has potential to reduce the overall work.
+
+# Running time
+    Test set 1 (25 pts / 2 s) - 0.047s
+    Test set 2 (25 pts / 2 s) - 0.143s
+    Test set 3 (25 pts / 2 s) - 0.422s
+    Test set 4 (25 pts / 2 s) - 1.105s

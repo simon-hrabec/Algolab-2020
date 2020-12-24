@@ -24,3 +24,9 @@ Last thing to be careful in binary search implementation is to avoid an infinite
 
 # Additional notes
 I tried using lambdas with wide capture heavily in this code. The graphs could be encapsulated into separate classes but using the lambda approach you can read the whole code from line 0 without jumping up and down (위아레) and still avoid code reuse. Also, I do not recreate the graph but only rewrite the capacity values, which is the only part that change.
+
+# Running time
+    Test set 1 (25 pts / 1 s) - 0.488s
+    Test set 2 (25 pts / 1 s) - 0.09s
+    Test set 3 (25 pts / 1 s) - 0.116s
+    Test set 4 (25 pts / 1 s) - 0.7s

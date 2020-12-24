@@ -32,3 +32,7 @@ Since we stored all the queries and execute/calculate them in different order (a
 
 # Additional ideas
 DFS is performed using implicit call stack. Should the graph be a sequential list with big depth we could run out of stack memory and have stack overflow. Using explicig stack would mitigate this problem.
+
+# Running time
+    Test set 1 (30 pts / 2 s) - 0.01s
+    Test set 2 (70 pts / 2 s) - 0.458s
