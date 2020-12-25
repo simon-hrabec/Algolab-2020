@@ -21,7 +21,7 @@ In the first query we are given number N and are tasked to provide the maximum (
 In the second query we are given number D and are tasked to provide the maximum number of families to accommodate such that tents of different families are at least D (squared) apart. We can just iterate over the edges and and merge all clusters that are less than D (squared) apart. Then we just calculate the number of families from the cluster counts.
 
 ## Calculating both queries at once
-Both queries require steps that are shared between both of them, more specifically - iterating over edges and merging clusters. We could therefore do this only once and get the results for both queries during that for a small speedup.
+Both queries require steps that are shared between both of them, more specifically - iterating over edges and merging clusters. We could therefore do this only once and get the results for both queries during that for a small speedup. There are two version of the code. The first [solution](https://github.com/simon-hrabec/Algolab2020/blob/main/Week%2011%20-%20Hand/hand-2-queries.cpp) has the 2 queries separated, which requires more code but is easily readable. The second [solution](https://github.com/simon-hrabec/Algolab2020/blob/main/Week%2011%20-%20Hand/hand-one-loop.cpp) has just once loop but the two queries and their conditions are intertwined.
 
 # Running time
     Test set 1 (25 pts / 4 s) - 0.013s
