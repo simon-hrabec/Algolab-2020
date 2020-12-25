@@ -22,3 +22,9 @@ In the second query we are given number D and are tasked to provide the maximum 
 
 ## Calculating both queries at once
 Both queries require steps that are shared between both of them, more specifically - iterating over edges and merging clusters. We could therefore do this only once and get the results for both queries during that for a small speedup.
+
+# Running time
+    Test set 1 (25 pts / 4 s) - 0.013s
+    Test set 2 (25 pts / 4 s) - 0.363s
+    Test set 3 (25 pts / 4 s) - 0.314s
+    Test set 4 (25 pts / 4 s) - 0.24s
