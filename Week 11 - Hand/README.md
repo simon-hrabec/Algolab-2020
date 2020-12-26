@@ -24,7 +24,7 @@ In the second query we are given number D and are tasked to provide the maximum 
 Both queries require steps that are shared between both of them, more specifically - iterating over edges and merging clusters. We could therefore do this only once and get the results for both queries during that for a small speedup. There are two version of the code. The first [solution](https://github.com/simon-hrabec/Algolab2020/blob/main/Week%2011%20-%20Hand/hand-2-queries.cpp) has the 2 queries separated, which requires more code but is easily readable. The second [solution](https://github.com/simon-hrabec/Algolab2020/blob/main/Week%2011%20-%20Hand/hand-one-loop.cpp) has just once loop but the two queries and their conditions are intertwined.
 
 # Running time
-    Test set 1 (25 pts / 4 s) - 0.013s
-    Test set 2 (25 pts / 4 s) - 0.363s
-    Test set 3 (25 pts / 4 s) - 0.314s
-    Test set 4 (25 pts / 4 s) - 0.24s
+    Test set 1 (30 pts / 2 s) - 0.013s
+    Test set 2 (30 pts / 2 s) - 0.363s
+    Test set 3 (20 pts / 2 s) - 0.314s
+    Test set 4 (20 pts / 2 s) - 0.24s
