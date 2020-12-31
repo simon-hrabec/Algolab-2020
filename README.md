@@ -8,6 +8,14 @@ The code for these problems is written with the following in mind:
 
 Should you find some typo, bug, improvement or anything related feel free to message me at my email `simon.hrabec` on gmail.
 
+| Week | Problem of the Week | 1st problem | 2nd problem | 3rd problem | 4th problem |
+| --- | --- | --- | --- | --- | --- |
+| 5 | | Asterix the Gaul | | | |
+| 8 | | Germs | | | |
+| 11 | | Hand | | | |
+| 12 | | India | Moving Books | | |
+| 13 | | Evolution | Marathon | Sith | |
+
 Techniques/algorithms/data structures:
 - BFS - [W13/Sith](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2013%20-%20Sith)
 - Binary Search - [W05/Asterix the Gaul](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2005%20-%20Asterix%20the%20Gaul) [W12/India](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2012%20-%20India) [W12/Moving Books](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2012%20-%20Moving%20Books) [W13/Evolution](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2013%20-%20Evolution) [W13/Marathon](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2013%20-%20Marathon) [W13/Sith](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2013%20-%20Sith)
