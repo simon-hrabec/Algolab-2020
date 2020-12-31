@@ -6,6 +6,7 @@ echo_link() {
 	echo -n "[$(echo "$1" | sed 's|^.*[[:digit:]][[:digit:]]\( PotW\)\? - ||g')](${REPO_PATH}$(echo "$1" | sed 's| |%20|g'))"
 }
 
+echo "## Featured solutions"
 echo "| Week | Problem of the Week | 1st problem | 2nd problem | 3rd problem | 4th problem |"
 echo "| --- | --- | --- | --- | --- | --- |"
 

@@ -15,7 +15,7 @@ REPO_PATH="${1:-https://github.com/simon-hrabec/Algolab2020/tree/main/}"
 # } >> README.md
 
 
-echo "Techniques/algorithms/data structures:"
+echo "## Techniques/algorithms/data structures:"
 find . -type f -name "tags" -exec cat {} \; | sort | uniq | while read -r tag; do
 	echo -n "- $tag -"
 	grep -rl "$tag" */tags | while read -r problem; do
