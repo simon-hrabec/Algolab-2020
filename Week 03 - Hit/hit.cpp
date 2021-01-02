@@ -1,5 +1,4 @@
 #include <iostream>
-#include <CGAL/Gmpq.h>
 #include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
 
 using Kernel = CGAL::Exact_predicates_inexact_constructions_kernel;
