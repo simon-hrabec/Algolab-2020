@@ -24,8 +24,8 @@ for i in $(seq -w 01 14); do
 			PROBLEM="$(ls -1 | grep "$i - " | sed "${j}q;d")"
 			if [ ! -z "$PROBLEM" ]; then
 				echo_link "$PROBLEM"
-				echo -n " | "
 			fi
+			echo -n " | "
 		done
 		printf "\n"
 	fi
