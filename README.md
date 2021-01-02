@@ -19,7 +19,7 @@ Should you find some typo, bug, improvement or anything related feel free to mes
 | 12 |  | [India](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2012%20-%20India) | [Moving Books](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2012%20-%20Moving%20Books) |  |  | 
 | 13 |  | [Evolution](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2013%20-%20Evolution) | [Marathon](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2013%20-%20Marathon) | [Sith](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2013%20-%20Sith) |  | 
 
-## Techniques/algorithms/data structures:
+## Techniques/algorithms/data structures
 - BFS - [W13/Sith](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2013%20-%20Sith)
 - Binary Search - [W05/Asterix the Gaul](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2005%20-%20Asterix%20the%20Gaul) [W12/India](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2012%20-%20India) [W12/Moving Books](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2012%20-%20Moving%20Books) [W13/Evolution](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2013%20-%20Evolution) [W13/Marathon](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2013%20-%20Marathon) [W13/Sith](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2013%20-%20Sith)
 - CGAL Geometry - [W03/First Hit](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2003%20-%20First%20Hit) [W03/Hit](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2003%20-%20Hit)
