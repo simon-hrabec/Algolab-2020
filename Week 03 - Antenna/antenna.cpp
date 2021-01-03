@@ -15,6 +15,7 @@ using SQRT_Kernel = CGAL::Exact_predicates_exact_constructions_kernel_with_sqrt;
 using SQRT_Traits = CGAL::Min_circle_2_traits_2<SQRT_Kernel>;
 using SQRT_Min_circle = CGAL::Min_circle_2<SQRT_Traits>;
 using SQRT_Point = SQRT_Kernel::Point_2;
+using SQRT_Circle = SQRT_Kernel::Circle_2;
 
 template <typename T>
 int64_t round_up(const T &input_val) {
@@ -34,17 +35,23 @@ void solve(const int nr_points){
     points.emplace_back(x,y);
   }
   
-  const Min_circle mc(std::begin(points), std::end(points), true);
+  if(nr_points == 1) {
+    std::cout << 0 << std::endl;
+    return;
+  }
+  
+  const Min_circle mc(std::begin(points), std::end(points));
 
   std::vector<SQRT_Point> sqrt_points;
   for(auto iter = mc.support_points_begin(); iter != mc.support_points_end(); ++iter) {
     sqrt_points.emplace_back(iter->x(), iter->y());
   }
   
-  const SQRT_Min_circle sqrt_mc(std::begin(sqrt_points), std::end(sqrt_points), true);
-  const SQRT_Traits::Circle sqrt_c = sqrt_mc.circle();
+  SQRT_Circle circle = (sqrt_points.size() == 3 ?
+    SQRT_Circle(sqrt_points[0], sqrt_points[1], sqrt_points[2]) :
+    SQRT_Circle(sqrt_points[0], sqrt_points[1]));
   
-  std::cout << round_up(CGAL::sqrt(sqrt_c.squared_radius())) << std::endl;
+  std::cout << round_up(CGAL::sqrt(circle.squared_radius())) << std::endl;
 }
 
 int main() {
