@@ -12,8 +12,6 @@ using Min_circle = CGAL::Min_circle_2<Traits>;
 using Point = Kernel::Point_2;
 
 using SQRT_Kernel = CGAL::Exact_predicates_exact_constructions_kernel_with_sqrt;
-using SQRT_Traits = CGAL::Min_circle_2_traits_2<SQRT_Kernel>;
-using SQRT_Min_circle = CGAL::Min_circle_2<SQRT_Traits>;
 using SQRT_Point = SQRT_Kernel::Point_2;
 using SQRT_Circle = SQRT_Kernel::Circle_2;
 
@@ -40,7 +38,7 @@ void solve(const int nr_points){
     return;
   }
   
-  const Min_circle mc(std::begin(points), std::end(points));
+  const Min_circle mc(std::begin(points), std::end(points), true);
 
   std::vector<SQRT_Point> sqrt_points;
   for(auto iter = mc.support_points_begin(); iter != mc.support_points_end(); ++iter) {

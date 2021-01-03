@@ -22,7 +22,7 @@ The direct construction is, of course, faster (by astonishing 9ms across all tes
     Test set 1 (10 pts / 1 s) - 0.002s
     Test set 2 (10 pts / 1 s) - 0.002s
     Test set 3 (20 pts / 1 s) - 0.005s
-    Test set 4 (20 pts / 1 s) - 0.096s
+    Test set 4 (20 pts / 1 s) - 0.095s
     Test set 5 (10 pts / 1 s) - 0.19s
     Test set 6 (10 pts / 1 s) - 0.0s
     Test set 7 (10 pts / 1 s) - 0.239s
