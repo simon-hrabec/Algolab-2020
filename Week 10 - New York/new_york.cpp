@@ -50,28 +50,31 @@ void dfs(const int node) {
   auto &current = dfs_stack[depth-1];
   auto &start = dfs_stack[depth-trip_len];
   auto &not_included = dfs_stack[depth-trip_len-1];
-  
+
+  // Update temperature count map to match current "sliding" window
   current = {temperatures[node], false};
   count_map[current.first]++;
-
   if (depth > trip_len) {
     remove(not_included.first);
   }
-    
+
+  // Check if path ending here is valid
   if (depth >= trip_len && temperature_difference() <= max_temperature_difference) {
     start.second = true;
   }
-  
+
+  // Go deeper
   for(const int child : neigbors[node]) {
     dfs(child);
   }
-  
+
+  // Reverse temperature count map to original state
   if (depth > trip_len) {
     count_map[not_included.first]++;
   }
-  
   remove(current.first);
-  
+
+  // Check if this is a valid path start
   if (current.second) {
     viable_points[viable_point_count++] = node;
   }
@@ -82,27 +85,27 @@ void solve(){
   const int point_count = load<int>();
   trip_len = load<int>();
   max_temperature_difference = load<int>();
-  
+
   count_map.clear();
   for(int i = 0; i < point_count; i++) {
     neigbors[i].clear();
   }
-  
+
   for(int i = 0; i < point_count; i++) {
     std::cin >> temperatures[i];
   }
-  
+
   for(int i = 0; i < point_count-1; i++) {
     const int from = load<int>();
     const int to = load<int>();
     neigbors[from].push_back(to);
   }
-  
+
   viable_point_count = 0;
   depth = 0;
-  
+
   dfs(0);
-  
+
   if (viable_point_count) {
     std::sort(std::begin(viable_points), std::begin(viable_points)+viable_point_count);
     for(auto it = std::begin(viable_points); it != std::begin(viable_points)+viable_point_count; ++it) {
