@@ -13,7 +13,7 @@ Should you find some typo, bug, improvement or anything related feel free to mes
 | --- | --- | --- | --- | --- | --- |
 | 3 |  | [Antenna](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2003%20-%20Antenna) | [First Hit](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2003%20-%20First%20Hit) | [Hit](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2003%20-%20Hit) |  | 
 | 5 | [Motorcycles](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2005%20PotW%20-%20Motorcycles) | [Asterix the Gaul](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2005%20-%20Asterix%20the%20Gaul) |  |  |  | 
-| 7 |  | [Radiation](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2007%20-%20Radiation) |  |  |  | 
+| 7 |  | [Radiation](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2007%20-%20Radiation) | [What is the Maximum](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2007%20-%20What%20is%20the%20Maximum) |  |  | 
 | 8 |  | [Germs](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2008%20-%20Germs) |  |  |  | 
 | 10 |  | [New York](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2010%20-%20New%20York) |  |  |  | 
 | 11 |  | [Hand](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2011%20-%20Hand) |  |  |  | 
@@ -28,7 +28,7 @@ Should you find some typo, bug, improvement or anything related feel free to mes
 - DFS - [W05/Asterix the Gaul](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2005%20-%20Asterix%20the%20Gaul) [W10/New York](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2010%20-%20New%20York) [W13/Evolution](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2013%20-%20Evolution) [W13/Sith](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2013%20-%20Sith)
 - Delaunay Triangulation - [W08/Germs](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2008%20-%20Germs) [W11/Hand](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2011%20-%20Hand) [W13/Sith](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2013%20-%20Sith)
 - Dijkstra - [W13/Marathon](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2013%20-%20Marathon)
-- Linear Programming - [W07/Radiation](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2007%20-%20Radiation)
+- Linear Programming - [W07/Radiation](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2007%20-%20Radiation) [W07/What is the Maximum](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2007%20-%20What%20is%20the%20Maximum)
 - Max-Flow-Min-Cost - [W12/India](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2012%20-%20India) [W13/Marathon](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2013%20-%20Marathon)
 - Randomization - [W03/Antenna](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2003%20-%20Antenna) [W03/First Hit](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2003%20-%20First%20Hit)
 - Split and List - [W05/Asterix the Gaul](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2005%20-%20Asterix%20the%20Gaul)
