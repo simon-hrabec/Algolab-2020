@@ -3,7 +3,11 @@
 REPO_PATH="${1:-https://github.com/simon-hrabec/Algolab2020/tree/main/}"
 
 echo_link() {
-	echo -n "[$(echo "$1" | sed 's|^.*[[:digit:]][[:digit:]]\( PotW\)\? - ||g')](${REPO_PATH}$(echo "$1" | sed 's| |%20|g'))"
+	PROBLEM_PATH="${REPO_PATH}$(echo "$1" | sed 's| |%20|g')"
+	PROBLEM_PDF_PATH="${PROBLEM_PATH}/description.pdf"
+	PROBLEM_NAME="$(echo "$1" | sed 's|^.*[[:digit:]][[:digit:]]\( PotW\)\? - ||g')"
+	echo -n "<a href=\"${PROBLEM_PDF_PATH}\"><img src=\"https://i2.wp.com/www.uei.com/wp-content/uploads/2017/10/pdf-icon.png\" height=\"18\"></a>"
+	echo -n "[${PROBLEM_NAME}](${PROBLEM_PATH})"
 }
 
 echo "## Featured solutions"
