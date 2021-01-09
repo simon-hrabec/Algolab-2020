@@ -8,6 +8,11 @@ The code for these problems is written with the following in mind:
 
 Should you find some typo, bug, improvement or anything related feel free to message me at my email `simon.hrabec` on gmail.
 
+How to use this repository:
+- Copy-paste relevant code snippets to begin your work
+- If stuck and gave the problem alraedy some time read the minimal amount of problem solution to get yourself unstuck
+- After finishing the task check the solutions for alternative ways to approach it
+- Check the code if you just wanna compare the code of your solution and see how other people write C++
 ## Featured solutions
 | Week | Problem of the Week | 1st problem | 2nd problem | 3rd problem | 4th problem |
 | --- | --- | --- | --- | --- | --- |
