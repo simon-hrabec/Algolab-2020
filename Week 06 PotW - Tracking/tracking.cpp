@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <array>
 
 #include <boost/graph/adjacency_list.hpp>
 #include <boost/graph/dijkstra_shortest_paths.hpp>
@@ -57,8 +56,9 @@ void solve(){
 
 int main() {
   std::ios_base::sync_with_stdio(false);
-  int t; std::cin >> t;
-  for(int i = 0; i < t; i++) {
+  int T;
+  std::cin >> T;
+  while(T--){
     solve();
   }
 }
