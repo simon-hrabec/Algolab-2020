@@ -42,3 +42,10 @@ How to use this repository:
 - Randomization - [W03/Antenna](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2003%20-%20Antenna) [W03/First Hit](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2003%20-%20First%20Hit)
 - Split and List - [W05/Asterix the Gaul](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2005%20-%20Asterix%20the%20Gaul)
 - Union-Find - [W11/Hand](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2011%20-%20Hand)
+## Code snippets
+One of the most annoying thing about ALGOLAB (after thinking hard ^^) is to always copy paste the right definitions for boost graphs, CGAL LP or flow edge adder. For this reason I put together a small set of useful snippets that should cover all your basic needs. No more reading throu lectures to find the code, searching through all the code examples again or copy pasting from old problems. Here everything is at one place.
+- [Linear programming](${REPO_PATH}code%20snippets#Linear-programming)
+- [Main function - N cases](${REPO_PATH}code%20snippets#Main-function---N-cases)
+- [Main function - 0 terminated](${REPO_PATH}code%20snippets#Main-function---0-terminated)
+- [CGAL round down](${REPO_PATH}code%20snippets#CGAL-round-down)
+- [Kernel conversions](${REPO_PATH}code%20snippets#Kernel-conversions)
