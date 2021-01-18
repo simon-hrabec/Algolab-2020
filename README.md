@@ -44,7 +44,7 @@ How to use this repository:
 - Split and List - [W05/Asterix the Gaul](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2005%20-%20Asterix%20the%20Gaul)
 - Union-Find - [W11/Hand](https://github.com/simon-hrabec/Algolab2020/tree/main/Week%2011%20-%20Hand)
 ## Code snippets
-One of the most annoying thing about ALGOLAB (after thinking hard ^^) is to always copy paste the right definitions for boost graphs, CGAL LP or flow edge adder. For this reason I put together a small set of useful snippets that should cover all your basic needs. No more reading throu lectures to find the code, searching through all the code examples again or copy pasting from old problems. Here everything is at one place.
+One of the most annoying thing about ALGOLAB (after the hard thinking ^^) is to always copy paste the right definitions for boost graphs, CGAL LP or flow edge adder. For this reason I put together a small set of useful snippets that should cover all your basic needs. It shoud prevent you from always searching the lecture notes or code examples for the relevant lines or going to the CGAL docs for basic syntax. You should find it here at one place. Some of the snippets are in fact the code from lectures or code examples (modified to some extent), some are written from scratch. The all attributions are listed in the code snippet descriptions.
 - [Linear programming](https://github.com/simon-hrabec/Algolab2020/tree/main/code%20snippets#Linear-programming)
 - [Main function - N cases](https://github.com/simon-hrabec/Algolab2020/tree/main/code%20snippets#Main-function---N-cases)
 - [Main function - 0 terminated](https://github.com/simon-hrabec/Algolab2020/tree/main/code%20snippets#Main-function---0-terminated)
