@@ -42,6 +42,7 @@ void constraint(Program & lp, const int i, const int x, const int y, const int z
 }
 
 int main() {
+  std::ios::sync_with_stdio(false);
   while(true) {
     const int problem_type = load<int>();
     if (problem_type == 0) {

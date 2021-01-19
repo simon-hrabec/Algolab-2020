@@ -81,6 +81,7 @@ void solve() {
 }
 
 int main() {
+  std::ios::sync_with_stdio(false);
   int T; std::cin >> T;
   while(T--) {
     solve();
