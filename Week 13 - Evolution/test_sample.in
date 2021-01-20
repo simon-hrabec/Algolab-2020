@@ -1,0 +1,20 @@
+1
+8 3
+luca 10
+bacteria 7
+archaea 8
+eukaryota 7
+aquifex 3
+plants 4
+animals 6
+thermotoga 1
+bacteria luca
+archaea luca
+eukaryota luca
+aquifex bacteria
+plants eukaryota
+animals eukaryota
+thermotoga aquifex
+thermotoga 4
+thermotoga 2
+plants 8
