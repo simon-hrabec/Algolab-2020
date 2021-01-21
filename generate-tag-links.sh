@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Seaches all problems and their 'tag' file
+# Creates a list and adds each problem to all relevant categories
+# Generates README list of those with links
+
 REPO_PATH="${1:-https://github.com/simon-hrabec/Algolab2020/tree/main/}"
 
 echo "## Techniques/algorithms/data structures"

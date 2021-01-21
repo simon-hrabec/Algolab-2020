@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Seachers for all directories/folder containing problems
+# For each week (if any solution is present) generates a line in the solution table
+
 REPO_PATH="${1:-https://github.com/simon-hrabec/Algolab2020/tree/main/}"
 
 echo_link() {

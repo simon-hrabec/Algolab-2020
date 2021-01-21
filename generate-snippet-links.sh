@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Finds all headlines from the code snippets readme
+# For each headlines creates a link into the main readme
+
 REPO_PATH="${1:-https://github.com/simon-hrabec/Algolab2020/tree/main/}"
 SNIPPETS_README_PATH="${REPO_PATH}code%20snippets#"
 
