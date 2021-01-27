@@ -55,8 +55,7 @@ void fill_triangulation(Triangulation & t) {
     if (t.is_infinite(f)) {
       q.emplace(max_value, f);
     } else {
-      const Point center = CGAL::circumcenter(f->vertex(0)->point(), f->vertex(1)->point(), f->vertex(2)->point());
-      const K::FT face_len_squared = CGAL::squared_distance(center, f->vertex(0)->point());
+      const K::FT face_len_squared = squared_radius(f->vertex(0)->point(), f->vertex(1)->point(), f->vertex(2)->point());
       q.emplace(face_len_squared, f);
     }
   }
