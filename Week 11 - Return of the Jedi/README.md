@@ -17,7 +17,7 @@ This ide is pretty simple, however, we dont know what is the longest edge on the
 We iterate over all the edges that are not part of the MST. For each such edge we check what is the difference between the price of thius edge and the longest edge on the path between those vertices using the edges of the MST. Note that this number is guaranteed to be positive, otherwise this edge would have to be part of the MST. We take the smallest difference and add it to the price of MST, which is the desired result.
 
 ## Alternative approach
-If you find the approach mentioned above a bit too complicated you can chose an alternative approach (thanks to Mike Marti who told me about this). You can just compute the MST and then calculate additional N-1 MSTs - for each you ignore one edge of the original MST. You then use the smallest cost among the restricted MSTs. This is not only concepltually simple, but also quite simple to code and it also runs surprisingly fast.
+If you find the approach mentioned above a bit too complicated you can chose an alternative approach (thanks to [SeboCode](https://github.com/SeboCode/ETHZ-AlgoLab-2020) who told me about this). You can just compute the MST and then calculate additional N-1 MSTs - for each you ignore one edge of the original MST. You then use the smallest cost among the restricted MSTs. This is not only concepltually simple, but also quite simple to code and it also runs surprisingly fast.
 
 # Running time
     Test set 1 (40 pts / 2 s) - 0.012s
