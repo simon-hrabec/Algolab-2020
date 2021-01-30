@@ -44,14 +44,14 @@ T load(){
 void solve() {
   const int vertex_count = load<int>();
   const int edge_count = load<int>();
-  
+
   graph G(vertex_count);
   edge_adder adder(G);
   const vertex_desc source = boost::add_vertex(G);
   const vertex_desc target = boost::add_vertex(G);
-  
+
   int in = 0;
-  
+
   for(int i = 0; i < vertex_count; i++) {
     int value = load<int>();
     if (value > 0) {
@@ -62,15 +62,15 @@ void solve() {
       adder.add_edge(i, target, -value);
     }
   }
-  
+
   for(int i = 0; i < edge_count; i++) {
     const int from = load<int>();
     const int to = load<int>();
     const int value = load<int>();
-    
+
     adder.add_edge(from, to, value);
   }
-  
+
   const int flow = boost::push_relabel_max_flow(G, source, target);
   std::cout << (flow < in ? "yes" : "no") << std::endl;
 }

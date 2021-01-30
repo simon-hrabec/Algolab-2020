@@ -42,14 +42,14 @@ const int max_connected_component_size(const v2dp& planets, const int used_plane
   for(auto v = t.finite_vertices_begin(); v != t.finite_vertices_end(); ++v){
     v->info() = false;
   }
-  
+
   int max_component_size = 0;
   // Run from BFS from every unvisited node
   for(auto v = t.finite_vertices_begin(); v != t.finite_vertices_end(); ++v){
     int component_size = 0;
     std::queue<Triangulation::Vertex_handle> q;
     q.push(v);
-    
+
     while(!q.empty()) {
       const auto current_vertex = q.front();
       q.pop();
@@ -66,7 +66,7 @@ const int max_connected_component_size(const v2dp& planets, const int used_plane
     }
     max_component_size = std::max(max_component_size, component_size);
   }
-  
+
   return max_component_size;
 }
 
@@ -75,12 +75,12 @@ void solve() {
   const double range = load<double>();
   const double squared_range = range*range;
   const auto planets = loadv2dp(nr_planets);
-  
+
   if (nr_planets <= 3) {
     std::cout << 1 << std::endl;
     return;
   }
-  
+
   int best_result = 0;
   int low = 2, high = nr_planets/2;
   while (low <= high) {
@@ -101,7 +101,7 @@ void solve() {
       high = mid-1;
     }
   }
-  
+
   std::cout << best_result << std::endl;
 }
 

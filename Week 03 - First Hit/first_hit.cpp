@@ -56,12 +56,12 @@ void solve(const int nr_obstacles) {
     std::cin >> obstacle_coordinates[i][0] >> obstacle_coordinates[i][1] >> obstacle_coordinates[i][2] >> obstacle_coordinates[i][3];
   }
   std::random_shuffle(std::begin(obstacle_coordinates), std::begin(obstacle_coordinates)+nr_obstacles);
-  
+
   // declare variables
   int iter;
   bool found = false;
   Segment ray_segment;
-  
+
   // find first collision
   for(iter = 0; iter < nr_obstacles; iter++) {
     const Segment obstacle = coordinates_to_segment(obstacle_coordinates[iter]);
@@ -73,12 +73,12 @@ void solve(const int nr_obstacles) {
       break;
     }
   }
-  
+
   if(!found) {
     std::cout << "no" << std::endl;
     return;
   }
-  
+
   // process other collisions
   for(;iter < nr_obstacles; iter++) {
     const Segment obstacle = coordinates_to_segment(obstacle_coordinates[iter]);

@@ -50,9 +50,9 @@ void solve(){
   const int budget = load<int>();
   const int start = load<int>();
   const int finish = load<int>();
-  
+
   int start_capacity = 0, finish_capacity = 0;
-  
+
   std::vector<std::tuple<int, int, int, int>> guides(nr_guides);
   for(int i = 0; i < nr_guides; i++) {
     const int from = load<int>();
@@ -60,43 +60,43 @@ void solve(){
     const int unit_cost = load<int>();
     const int capacity = load<int>();
     guides[i] = {from, to, unit_cost, capacity};
-    
+
     if(from == start) {
       start_capacity += capacity;
     }
-    
+
     if(to == finish) {
       finish_capacity += capacity;
     }
   }
-  
+
   int low = 0, high = std::min(start_capacity, finish_capacity);
   while (true) {
     const int mid = (low+high+1)/2;
-    
+
     Graph G(nr_cities);
     edge_adder adder(G);
     const auto source = boost::add_vertex(G);
-    
+
     adder.add_edge(source, start, mid, 0);
-    
+
     for(const auto[from, to, cost, capacity] : guides) {
       adder.add_edge(from, to, capacity, cost);
     }
-    
+
     boost::successive_shortest_path_nonnegative_weights(G, source, finish);
     auto c_map = boost::get(boost::edge_capacity, G);
     auto rc_map = boost::get(boost::edge_residual_capacity, G);
     const auto first_edge = *boost::out_edges(boost::vertex(source, G), G).first;
-    
+
     const int cost = boost::find_flow_cost(G);
     const int flow = c_map[first_edge] - rc_map[first_edge];
-    
+
     if (low == high || (cost <= budget && flow < mid)) {
       std::cout << flow << std::endl;
       break;
     }
-    
+
     if (cost > budget) {
       high = mid-1;
     } else {

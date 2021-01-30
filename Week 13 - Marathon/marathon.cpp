@@ -40,7 +40,7 @@ void solve() {
     const int nr_streets = load<int>();
     const int start = load<int>();
     const int finish = load<int>();
-    
+
     // Graph definition (for min distance)
     distance::graph DG(nr_cities);
     distance::weight_map distance_weights = boost::get(boost::edge_weight, DG);
@@ -48,7 +48,7 @@ void solve() {
       const auto edge = boost::add_edge(from, to, DG).first;
       distance_weights[edge] = distance;
     };
-    
+
     // Graph definition (for flow cost binary search)
     flow::graph FG(nr_cities);
     const auto source = boost::add_vertex(FG);
@@ -65,19 +65,19 @@ void solve() {
       flow_w_map[edge] = cost;
       flow_w_map[rev_edge] = -cost;
     };
-    
+
     // Load edges and add them to graphs
     for(int i = 0; i < nr_streets; i++) {
       const int from = load<int>();
       const int to = load<int>();
       const int capacity = load<int>();
       const int distance = load<int>();
-      
+
       add_edge_to_distance_graph(from, to, distance);
       add_edge_to_flow_graph(from, to, capacity, distance);
       add_edge_to_flow_graph(to, from, capacity, distance);
     }
-    
+
     // Add special edge to regulate max capacity
     const auto source_edge = boost::add_edge(source, start, FG).first;
     const auto source_rev_edge = boost::add_edge(start, source, FG).first;
@@ -87,20 +87,20 @@ void solve() {
     flow_r_map[source_rev_edge] = source_edge;
     flow_w_map[source_edge] = 0;
     flow_w_map[source_rev_edge] = 0;
-    
+
     // Save set capacity
     const auto flow_c_map_backup = flow_c_map;
     const auto set_graph_to_max_cap = [source_edge, &flow_c_map, &flow_c_map_backup](const int capacity){
       flow_c_map = flow_c_map_backup;
       flow_c_map[source_edge] = capacity;
     };
-    
+
     // Run dijkstra to find the shortest path
     std::vector<int> dist_map(nr_cities);
     boost::dijkstra_shortest_paths(DG, start,
       boost::distance_map(boost::make_iterator_property_map(dist_map.begin(), boost::get(boost::vertex_index, DG))));
     const int total_distance = dist_map[finish];
-    
+
     // Run binary search to find biggest possible number of participants
     const long max_capacity = boost::push_relabel_max_flow(FG, source, finish);
     long low = 1, high = max_capacity;
@@ -116,7 +116,7 @@ void solve() {
         high = mid-1;
       }
     }
-    
+
     std::cout << low << std::endl;
 }
 

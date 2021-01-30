@@ -29,15 +29,15 @@ void solve() {
   const auto x = load<int>();
   const auto y = load<int>();
   const auto nr_legions = load<int>();
-  
+
   Program lp(CGAL::SMALLER, false, 0, false, 0);
-  
+
   for(int i = 0; i < nr_legions; i++) {
     const auto a = load<int64_t>();
     const auto b = load<int64_t>();
     const auto c = load<int>();
     const auto speed = load<int>();
-    
+
     const int norm = std::sqrt(a*a + b*b);
     const bool is_negative = x*a + y*b + c < 0;
     if (is_negative) {
@@ -51,12 +51,12 @@ void solve() {
     }
     lp.set_a(2, i, norm*speed);
   }
-  
+
   lp.set_l(2, true, 0);
   lp.set_c(2, -1);
-  
+
   Solution s = CGAL::solve_linear_program(lp, ET());
-  
+
   std::cout << round_down(-s.objective_value()) << std::endl;
 }
 

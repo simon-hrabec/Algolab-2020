@@ -50,7 +50,7 @@ const K::FT max_value = K::FT(int64_t(1)<<53) * K::FT(int64_t(1)<<53);
 
 void fill_triangulation(Triangulation & t) {
   std::priority_queue<std::pair<K::FT, Triangulation::Face_handle>> q;
-  
+
   for (auto f = t.all_faces_begin(); f != t.all_faces_end(); ++f) {
     if (t.is_infinite(f)) {
       q.emplace(max_value, f);
@@ -59,17 +59,17 @@ void fill_triangulation(Triangulation & t) {
       q.emplace(face_len_squared, f);
     }
   }
-  
+
   while(!q.empty()) {
     auto p = q.top(); q.pop();
     const auto max_len = p.first;
     auto handle = p.second;
-    
+
     if (handle->info() != 0) {
       continue;
     }
     handle->info() = max_len;
-  
+
     for(int i = 0; i < 3; i++) {
       const auto neighbor = handle->neighbor(i);
       if (t.is_infinite(neighbor)) {
@@ -87,20 +87,20 @@ void solve() {
   const auto tree_count = load<int>();
   const auto balloon_count = load<int>();
   const auto tree_radius = load<int64_t>();
-  
+
   const auto trees = loadv2dp(tree_count);
   const auto balloons = loadvp2dpl(balloon_count);
-  
+
   Triangulation t(std::begin(trees), std::end(trees));
   fill_triangulation(t);
-  
+
   for(const auto &[point, balloon_radius] : balloons) {
     const K::FT min_distance_from_point = K::FT(tree_radius + balloon_radius) * K::FT(tree_radius + balloon_radius);
     if (CGAL::squared_distance(t.nearest_vertex(point)->point(), point) < min_distance_from_point) {
       std::cout << 'n';
       continue;
     }
-    
+
     const K::FT min_edge_len = 4*min_distance_from_point;
     const bool valid = t.locate(point)->info() >= min_edge_len;
     std::cout << "ny"[valid];

@@ -47,24 +47,24 @@ void solve() {
   const auto nr_boats = load<int>();
   const auto nr_sailors = load<int>();
   const auto nr_pairs = load<int>();
-  
+
   const int sailor_offset = nr_boats;
   graph G(nr_boats + nr_sailors);
   edge_adder adder(G);
   const vertex_desc source = boost::add_vertex(G);
   const vertex_desc target = boost::add_vertex(G);
-  
+
   // Add edges for boats
   for(int i = 0; i < nr_boats; i++) {
     adder.add_edge(source, i, 1, 0);
     adder.add_edge(i, target, 1, 50);
   }
-  
+
   // Add edges for sailors
   for(int i = 0; i < nr_sailors; i++) {
     adder.add_edge(i+sailor_offset, target, 1, 0);
   }
-  
+
   // Add edges between boats and sailors
   for(int i = 0; i < nr_pairs; i++) {
     const auto from_boat = load<int>();
@@ -72,11 +72,11 @@ void solve() {
     const auto factor = load<int>();
     adder.add_edge(from_boat, to_sailor+sailor_offset, 1, 50-factor);
   }
-  
+
   boost::successive_shortest_path_nonnegative_weights(G, source, target);
   const int cost = boost::find_flow_cost(G);
   const int result = nr_boats*50-cost;
-  
+
   std::cout << result << std::endl;
 }
 

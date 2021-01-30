@@ -22,17 +22,17 @@ void solve(int nr_obstacles){
   const Point ray_start = load_point(), ray_end = load_point();
   Ray ray(ray_start, ray_end);
   bool hit = false;
-  
+
   while(nr_obstacles--) {
     const Point obstacle_from = load_point(), obstacle_to = load_point();
     Segment obstacle(obstacle_from, obstacle_to);
-    
+
     if (CGAL::do_intersect(ray, obstacle)) {
       hit = true;
       break;
     }
   }
-  
+
   skip_input(nr_obstacles);
   std::cout << (hit ? "yes" : "no") << std::endl;
 }

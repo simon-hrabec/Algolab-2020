@@ -39,14 +39,14 @@ void dfs(const int idx) {
 void solve() {
   const int nr_species = load<int>();
   const int nr_queries = load<int>();
-  
+
   spiecies_map.clear();
   queries = std::vector<std::vector<std::pair<int,int>>>(nr_species);
   children = std::vector<std::vector<int>>(nr_species);
-  
+
   int max_age = std::numeric_limits<int>::min();
   int max_age_idx = 0;
-  
+
   // Load species and translate string name to number ID
   {std::string name;
   for(int i = 0; i < nr_species; i++) {
@@ -54,13 +54,13 @@ void solve() {
     std::cin >> ages[i];
     spiecies_map.emplace(name, i);
     names[i] = name;
-    
+
     if (ages[i] > max_age) {
       max_age = ages[i];
       max_age_idx = i;
     }
   }}
-  
+
   // Load edges
   {std::string name;
   for(int i = 0; i < nr_species-1; i++) {
@@ -70,7 +70,7 @@ void solve() {
     const int parent = spiecies_map[name];
     children[parent].push_back(child);
   }}
-  
+
   // Load queries
   {std::string name;
     for(int i = 0; i < nr_queries; i++) {
@@ -79,10 +79,10 @@ void solve() {
       queries[spiecies_map[name]].emplace_back(max_age, i);
     }
   }
-  
+
   // Compute results
   dfs(max_age_idx);
-  
+
   // Print results
   for(int i = 0; i < nr_queries; i++) {
     std::cout << names[results[i]] << " ";

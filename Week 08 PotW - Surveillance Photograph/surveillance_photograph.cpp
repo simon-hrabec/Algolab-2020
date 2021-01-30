@@ -74,31 +74,31 @@ void solve(){
   const auto street_count = load<int>();
   const auto station_count = load<int>();
   const auto photo_count = load<int>();
-  
+
   const auto stations = loadv<vi>(station_count);
   const auto photos = loadv<vi>(photo_count);
   const auto streets = loadvp<vpii>(street_count);
-  
+
   graph g(2*intersection_count);
   edge_adder adder(g);
   const vertex_desc source = boost::add_vertex(g);
   const vertex_desc target = boost::add_vertex(g);
   const int offset = intersection_count;
-  
+
   // Edges from source
   // Street to photo
   // Picking photo - transitioning to a new graph
   // Streets from photo to station (1 policeman only)
   // Edges to target
-  
+
   for(const auto station : stations) adder.add_edge(source, station, 1);
   for(const auto street : streets) adder.add_edge(street.first, street.second, station_count);
   for(const auto photo : photos) adder.add_edge(photo, photo+offset, 1);
   for(const auto street : streets) adder.add_edge(street.first+offset, street.second+offset, 1);
   for(const auto station : stations) adder.add_edge(station+offset, target, 1);
-  
+
   const int result = boost::push_relabel_max_flow(g, source, target);
-  
+
   std::cout << result << std::endl;
 }
 

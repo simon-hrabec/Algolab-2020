@@ -18,7 +18,7 @@ using SQRT_Circle = SQRT_Kernel::Circle_2;
 template <typename T>
 int64_t round_up(const T &input_val) {
   double num = std::ceil(CGAL::to_double(input_val));
-  
+
   while (num > input_val) num -= 1;
   while (num < input_val) num += 1;
   return static_cast<int64_t>(num);
@@ -27,28 +27,28 @@ int64_t round_up(const T &input_val) {
 void solve(const int nr_points){
   std::vector<Point> points;
   points.reserve(nr_points);
-  
+
   for(int i = 0; i < nr_points; i++) {
     int64_t x,y; std::cin >> x >> y;
     points.emplace_back(x,y);
   }
-  
+
   if(nr_points == 1) {
     std::cout << 0 << std::endl;
     return;
   }
-  
+
   const Min_circle mc(std::begin(points), std::end(points), true);
 
   std::vector<SQRT_Point> sqrt_points;
   for(auto iter = mc.support_points_begin(); iter != mc.support_points_end(); ++iter) {
     sqrt_points.emplace_back(iter->x(), iter->y());
   }
-  
+
   SQRT_Circle circle = (sqrt_points.size() == 3 ?
     SQRT_Circle(sqrt_points[0], sqrt_points[1], sqrt_points[2]) :
     SQRT_Circle(sqrt_points[0], sqrt_points[1]));
-  
+
   std::cout << round_up(CGAL::sqrt(circle.squared_radius())) << std::endl;
 }
 

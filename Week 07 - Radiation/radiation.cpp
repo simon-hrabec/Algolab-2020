@@ -25,20 +25,20 @@ void solve() {
   const int healthy_count = load<int>();
   const int tumor_count = load<int>();
   const int cells_total = healthy_count + tumor_count;
-  
+
   for(int i = 0; i < cells_total; i++) {
     std::cin >> cells[i][0];
     std::cin >> cells[i][1];
     std::cin >> cells[i][2];
   }
-  
+
   int solution = -1;
   CGAL::Quadratic_program_options options;
   options.set_pricing_strategy(CGAL::QP_BLAND);
   Program lp(CGAL::SMALLER, false, 0, false, 0);
   lp.set_l(0, true, 0);
   lp.set_c(0, -1);
-  
+
   for(int degree = 0; degree <= 30; degree++) {
     for(int i = 0; i < cells_total; i++) {
       const int coef = (i < healthy_count) ? 1 : -1;
@@ -54,7 +54,7 @@ void solve() {
         powers[i][degree][1] = powers[i][degree-1][1] * y;
         powers[i][degree][2] = powers[i][degree-1][2] * z;
       }
-      
+
       int param_id = 1;
       for(int a = 0; a <= degree; a++) {
         for(int b = 0; b <= degree-a; b++) {
@@ -65,14 +65,14 @@ void solve() {
       }
       lp.set_a(0, i, 1);
     }
-    
+
     Solution s = CGAL::solve_linear_program(lp, ET(), options);
     if (s.is_unbounded()) {
       solution = degree;
       break;
     }
   }
-  
+
   if (solution == -1) {
     std::cout << "Impossible!" << std::endl;
   } else {

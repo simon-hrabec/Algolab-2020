@@ -28,36 +28,36 @@ void solve() {
   const int boat_count = load<int>();
   const int sailor_count = load<int>();
   const int pair_count = load<int>();
-  
+
   Program lp(CGAL::SMALLER, false, 0, false, 0);
   const int sailor_offset = boat_count;
-  
+
   for(int i = 0; i < pair_count; i++) {
     const int from_boat = load<int>();
     const int to_sailor = load<int>();
     const int factor = load<int>();
-    
+
     const int boat_equation = from_boat;
     const int sailor_equation = to_sailor + sailor_offset;
-    
+
     lp.set_a(i, boat_equation, 1);
     lp.set_a(i, sailor_equation, 1);
     lp.set_c(i, -factor);
   }
-  
+
   for(int i = 0; i < boat_count; i++) {
     lp.set_b(i, 1);
   }
-  
+
   for(int i = 0; i < sailor_count; i++) {
     lp.set_b(i+sailor_offset, 1);
   }
-  
+
   for(int i = 0; i < pair_count; i++) {
     lp.set_l(i, true, 0);
     lp.set_u(i, true, 1);
   }
-  
+
   Solution s = CGAL::solve_linear_program(lp, ET());
   std::cout << round_down(-s.objective_value()) << std::endl;
 }

@@ -46,7 +46,7 @@ void dfs_fill(const int move, const int moves_used, const int64_t distance, cons
   if (time <= 0) {
     return;
   }
-  
+
   if(move >= max_move) {
     arr[moves_used].emplace_back(time, distance);
   } else {
@@ -60,14 +60,14 @@ void sort_and_remove_suboptimal(storage_array &arr) {
     if(row.size() <= 1) {
       continue;
     }
-    
+
     std::sort(std::begin(row), std::end(row), [](const auto &a, const auto &b){
       if (a.first == b.first) {
         return a.second > b.second;
       }
       return a.first < b.first;
     });
-    
+
     int shift = 0;
     int64_t min_distance = row.back().second; 
     for(int i = row.size()-2; i >= 0; i--) {
@@ -78,7 +78,7 @@ void sort_and_remove_suboptimal(storage_array &arr) {
         min_distance = row[i].second;
       } 
     }
-    
+
     if (shift > 0) {
       for(int i = 0; i < (int)row.size()-shift; i++) {
         row[i] = row[i+shift];
@@ -99,15 +99,15 @@ void solve() {
   const int nr_potions = load<int>();
   const int64_t distance = load<int64_t>();
   const int64_t time = load<int64_t>();
-  
+
   moves = loadvp<vpii>(nr_moves);
   potions = loadv<vi>(nr_potions);
-  
+
   best_without_potion.fill(std::numeric_limits<int64_t>::max());
-  
+
   dfs_fill(0, 0, distance, time, (nr_moves+1)/2, first_half);
   dfs_fill((nr_moves+1)/2, 0, distance, time, nr_moves, second_half);
-  
+
   sort_and_remove_suboptimal(first_half);
   sort_and_remove_suboptimal(second_half);
 
@@ -126,7 +126,7 @@ void solve() {
       }
     }
   }
-  
+
   int64_t best = std::numeric_limits<int64_t>::max();
   for(int i = 1; i <= nr_moves; i++) {
     if (best_without_potion[i] <= 0) {
@@ -140,7 +140,7 @@ void solve() {
       }
     }
   }
-  
+
   if(best == std::numeric_limits<int64_t>::max()) {
     std::cout << "Panoramix captured" << std::endl;
   } else {

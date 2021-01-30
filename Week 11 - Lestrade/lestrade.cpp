@@ -54,25 +54,25 @@ void solve() {
   const auto q3 = load<int>();
   const auto agent_count = load<int>();
   const auto gang_count = load<int>();
-  
+
   std::vector<std::pair<Point, Index>> gang_locations(gang_count);
   std::vector<std::tuple<int, int, int>> gangs_leakage(gang_count);
-  
+
   for(int i = 0; i < gang_count; i++){
     gang_locations[i].first = loadpoint();
     gang_locations[i].second = i;
     std::cin >> std::get<0>(gangs_leakage[i]) >> std::get<1>(gangs_leakage[i]) >> std::get<2>(gangs_leakage[i]);
   }
-  
+
   Triangulation t(std::begin(gang_locations), std::end(gang_locations));
-  
+
   Program lp(CGAL::LARGER, true, 0, true, 24);
   lp.set_b(0, q1);
   lp.set_b(1, q2);
   lp.set_b(2, q3);
-  
+
   std::unordered_map<int,int> gang_to_cheapest_agent_wage;
-  
+
   for(int i = 0; i < agent_count; i++){
     const int gang_idx = t.nearest_vertex(loadpoint())->info();
     const int wage = load<int>();
@@ -83,19 +83,19 @@ void solve() {
       it->second = std::min(it->second, wage);
     }
   }
-  
+
   int variable_index = 0;
   for(const auto &[gang_idx, wage] : gang_to_cheapest_agent_wage) {
     const auto [leak1, leak2, leak3] = gangs_leakage[gang_idx];
     lp.set_a(variable_index, 0, leak1);
     lp.set_a(variable_index, 1, leak2);
     lp.set_a(variable_index, 2, leak3);
-    
+
     lp.set_c(variable_index, wage);
-    
+
     variable_index++;
   }
-  
+
   Solution solution = CGAL::solve_linear_program(lp, ET());
   std::cout << "LH"[solution.is_infeasible() || round_down(solution.objective_value() > fee)] << std::endl;
 }

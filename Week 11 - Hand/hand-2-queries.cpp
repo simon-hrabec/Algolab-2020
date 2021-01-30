@@ -77,14 +77,14 @@ void solve() {
   const auto tents_needed = load<int>();
   const auto query_families = load<int>();
   const auto query_distance = load<double>();
-  
+
   const auto tents = loadv2dp(nr_tents);
-  
+
   cluster_sizes = {nr_tents, 0, 0, 0};
   std::vector<int> cluster_sizes(nr_tents, 1);
   Triangulation t(std::begin(tents), std::end(tents));
   boost::disjoint_sets_with_storage<> uf(nr_tents);
-  
+
   for(auto edge = t.finite_edges_begin(); edge != t.finite_edges_end(); ++edge) {
     Index i1 = edge->first->vertex((edge->second+1)%3)->info();
     Index i2 = edge->first->vertex((edge->second+2)%3)->info();
@@ -101,9 +101,9 @@ void solve() {
       cluster_sizes[new_size-1]++;
     }
   }
-  
+
   const int query_distance_result = get_family_count_fit(tents_needed);
-  
+
   cluster_sizes = {nr_tents, 0, 0, 0};
   cluster_sizes = std::vector<int>(nr_tents, 1);
   uf = boost::disjoint_sets_with_storage<>(nr_tents);
@@ -114,11 +114,11 @@ void solve() {
     Index i2 = edge->first->vertex((edge->second+2)%3)->info();
     edges.emplace_back(i1, i2, t.segment(edge).squared_length());
   }
-  
+
   std::sort(std::begin(edges), std::end(edges), [](const auto &e1, const auto &e2){
     return std::get<2>(e1) < std::get<2>(e2);
   });
-  
+
   int64_t query_families_result = -1;
   for(const auto [i1, i2, squared_distance] : edges) {
     Index c1 = uf.find_set(i1);
@@ -132,14 +132,14 @@ void solve() {
       cluster_sizes[size1-1]--;
       cluster_sizes[size2-1]--;
       cluster_sizes[new_size-1]++;
-      
+
       if (get_family_count_fit(tents_needed) < query_families) {
         query_families_result = squared_distance;
         break;
       }
     }
   }
-  
+
   std::cout << query_families_result << " " << query_distance_result << std::endl;
 }
 

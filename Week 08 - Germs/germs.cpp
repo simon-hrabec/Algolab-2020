@@ -33,19 +33,19 @@ void solve(const int nr_cells) {
   const int bottom = load<int>();
   const int right = load<int>();
   const int top = load<int>();
-  
+
   const auto cells = loadv2dp(nr_cells);
-  
+
   Triangulation t(std::begin(cells), std::end(cells));
-  
+
   std::vector<double> min_distances;
   min_distances.reserve(nr_cells);
-  
+
   for(auto vertex = t.finite_vertices_begin(); vertex != t.finite_vertices_end(); ++vertex){
     const double x = vertex->point().x();
     const double y = vertex->point().y();
     double die_distance = std::min({std::abs(left-x), std::abs(right-x), std::abs(top-y), std::abs(bottom-y)});
-    
+
     double closest_squared_die_distance = std::numeric_limits<double>::max();
     auto vertex_c = t.incident_vertices(vertex), done(vertex_c);
     if (vertex_c != 0) {
@@ -61,7 +61,7 @@ void solve(const int nr_cells) {
 
   const int mid_point = nr_cells/2;
   std::nth_element(std::begin(min_distances), std::begin(min_distances) + mid_point, std::end(min_distances));
-  
+
   const auto ceil_and_sqrt = [](const double &num){
     return std::ceil(std::sqrt(num));
   };

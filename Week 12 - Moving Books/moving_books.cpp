@@ -27,12 +27,12 @@ void solve() {
 
   const auto friends = loadv_sorted<vi>(nr_friends);
   const auto boxes = loadv_sorted<vi>(nr_boxes);
-  
+
   if(friends[0] < boxes[0]) {
     std::cout << "impossible" << std::endl;
     return;
   }
-  
+
   int low = (nr_boxes-1)/nr_friends+1, high = nr_boxes;
   while(low < high) {
     const int mid = (low+high)/2;
@@ -45,14 +45,14 @@ void solve() {
         break;
       }
     }
-    
+
     if(can_carry) {
       high = mid;
     } else {
       low = mid+1;
     }
   }
-  
+
   std::cout << low*3-1 << std::endl;
 }
 

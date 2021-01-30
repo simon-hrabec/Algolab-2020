@@ -27,7 +27,7 @@ T load() {
 void solve(const int line_count, const int dimension_count) {
   const int radius_id = dimension_count;
   Program lp(CGAL::SMALLER, false, 0, false, 0); 
-  
+
   for(int i = 0; i < line_count; i++) {
     int quad_sum = 0;
     for(int j = 0; j < dimension_count; j++) {
@@ -37,16 +37,16 @@ void solve(const int line_count, const int dimension_count) {
     }
     const int sqrt_quad_sum = std::sqrt(quad_sum);
     lp.set_a(radius_id, i, sqrt_quad_sum);
-    
+
     const int b_val = load<int>();
     lp.set_b(i, b_val);
   }
-  
+
   lp.set_l(radius_id, true, 0);
   lp.set_c(radius_id, -1);
-  
+
   Solution s = CGAL::solve_linear_program(lp, ET());
-  
+
   if (s.is_unbounded()) {
     std::cout << "inf" << std::endl;  
   } else if (s.is_infeasible()) {

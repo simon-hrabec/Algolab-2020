@@ -11,7 +11,7 @@ using Solution = CGAL::Quadratic_program_solution<ET>;
 
 int64_t round_up(const CGAL::Quotient<ET> &input_val) {
   double num = std::ceil(CGAL::to_double(input_val));
-  
+
   while (num > input_val) num -= 1;
   while (num < input_val) num += 1;
   return static_cast<int64_t>(num);
@@ -50,7 +50,7 @@ int main() {
     }
     const int a = load<int>();
     const int b = load<int>();
-    
+
     Program lp(CGAL::SMALLER, false, 0, false, 0); 
     if (problem_type == 1) {
       lp.set_l(X, true, 0);
@@ -71,7 +71,7 @@ int main() {
       lp.set_c(Y, b);
       lp.set_c(Z, 1);
     }
-    
+
     Solution s = CGAL::solve_linear_program(lp, ET());
     if (s.is_unbounded()) {
       std::cout << "unbounded" << std::endl;
