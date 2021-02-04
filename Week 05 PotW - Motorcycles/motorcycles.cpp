@@ -14,11 +14,11 @@ CGAL::Gmpq get_slope(const std::tuple<int64_t,int64_t,int64_t, int> &t) {
 }
 
 void solve() {
-  int bikers_count; std::cin >> bikers_count;
+  int nr_bikers; std::cin >> nr_bikers;
 
   // starting y, direction x, direction y, id
-  std::vector<std::tuple<int64_t,int64_t,int64_t,int>> bikers(bikers_count);
-  for(int i = 0; i < bikers_count; i++) {
+  std::vector<std::tuple<int64_t,int64_t,int64_t,int>> bikers(nr_bikers);
+  for(int i = 0; i < nr_bikers; i++) {
     std::cin >> std::get<0>(bikers[i]) >> std::get<1>(bikers[i]) >> std::get<2>(bikers[i]);
     std::get<3>(bikers[i]) = i;
   }
@@ -27,15 +27,15 @@ void solve() {
     return std::get<0>(first) < std::get<0>(second);
   });
 
-  std::vector<bool> possible(bikers_count, true);
+  std::vector<bool> possible(nr_bikers, true);
   std::vector<CGAL::Gmpq> slopes;
-  for(int i = 0; i < bikers_count; i++) {
+  for(int i = 0; i < nr_bikers; i++) {
     slopes.push_back(get_slope(bikers[i]));
   }
 
   // Iterate from bot to top
   CGAL::Gmpq best_slope = slopes.front();
-  for(int i = 1; i < bikers_count; i++) {
+  for(int i = 1; i < nr_bikers; i++) {
     if (CGAL::abs(slopes[i]) < CGAL::abs(best_slope) || (CGAL::abs(slopes[i]) == CGAL::abs(best_slope) && slopes[i] > best_slope)) {
       best_slope = slopes[i];
     } else if (slopes[i] < best_slope){
@@ -45,7 +45,7 @@ void solve() {
 
   // Iterate from top to bot
   best_slope = slopes.back();
-  for(int i = bikers_count-2; i >= 0; i--) {
+  for(int i = nr_bikers-2; i >= 0; i--) {
     if (CGAL::abs(slopes[i]) <= CGAL::abs(best_slope)) {
       best_slope = slopes[i];
     } else if (slopes[i] > best_slope){
@@ -55,7 +55,7 @@ void solve() {
 
   // Print results
   std::vector<int> results;
-  for(int i = 0; i < bikers_count; i++) {
+  for(int i = 0; i < nr_bikers; i++) {
     if (possible[i]) {
       results.push_back(std::get<3>(bikers[i]));
     }
