@@ -23,7 +23,7 @@ Another query we want to be able to answer is what is the maximum temperature di
 When we are about to finish the DFS call we check if some of the calls from the successor nodes set this viable start flag. If so, we add the node ID to the result array. Before printing at the end it we sort it (as required in the description).
 
 # Running time
-    Test set 1 (20 pts / 1 s) - 0.012s
-    Test set 2 (20 pts / 1 s) - 1.414s
-    Test set 3 (20 pts / 1 s) - 0.004s
-    Test set 4 (40 pts / 1 s) - 1.989s
+    Test set 1 (20 pts / 4 s) - 0.012s
+    Test set 2 (20 pts / 4 s) - 1.414s
+    Test set 3 (20 pts / 4 s) - 0.004s
+    Test set 4 (40 pts / 4 s) - 1.989s
