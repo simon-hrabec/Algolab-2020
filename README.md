@@ -54,3 +54,4 @@ One of the most annoying thing about ALGOLAB (after the hard thinking ^^) is to 
 - [CGAL intersections](https://github.com/simon-hrabec/Algolab2020/tree/main/code%20snippets#CGAL-intersections)
 - [Min Circle](https://github.com/simon-hrabec/Algolab2020/tree/main/code%20snippets#Min-Circle)
 - [Linear programming](https://github.com/simon-hrabec/Algolab2020/tree/main/code%20snippets#Linear-programming)
+- [Range loop - iterator wrapper](https://github.com/simon-hrabec/Algolab2020/tree/main/code%20snippets#Range-loop---iterator-wrapper)
