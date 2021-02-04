@@ -1,8 +1,8 @@
 template <typename T>
 struct iter_wrapper{
   T iter, iter_end;
-  T begin() const {return iter;}
-  T end() const {return iter_end;}
+  constexpr T begin() const noexcept {return iter;}
+  constexpr T end() const noexcept {return iter_end;}
 };
 
 template <typename T>
