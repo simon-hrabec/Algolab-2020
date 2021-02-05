@@ -19,8 +19,11 @@ The values we are interested in this problem are the length of the edge between 
 ## Applying Dijkstra
 Here it is useful to apply a variation (if possible to name it like that) of Dijkstra algorithm. We take priority queue (max elements first) and fill it with entries - for each triangle we insert its identifier (in my case I use face handles) and the size of the inscribed circle (squared). Infinite faces (faces outside of the convex hull of the points) have some sufficiently large value (pseudo infinity). We then process elements from the queue. The first element for each face is the best achievable value (hence we can ignore all subsequent entries for that face). When taking an entry from the queue besides assigning the value to the face we also expand it - we put into the queue the neighboring faces with values that's equal to minimum of the maximum achievable value and respective edge length.
 
+## Implementation details
+It is important to properly condition when to add tihngs to the priority queue. Especially adding `neighbor->info() != 0` can lead to 2x speedup.
+
 # Running time
-    Test set 1 (30 pts / 2 s) - 1.535s
-    Test set 2 (30 pts / 2 s) - 1.642s
-    Test set 3 (20 pts / 2 s) - 1.45s
-    Test set 4 (20 pts / 2 s) - 1.733s
+    Test set 1 (30 pts / 2 s) - 1.095s
+    Test set 2 (30 pts / 2 s) - 0.459s
+    Test set 3 (20 pts / 2 s) - 0.81s
+    Test set 4 (20 pts / 2 s) - 1.059s
