@@ -51,6 +51,7 @@ One of the most annoying thing about ALGOLAB (after the hard thinking ^^) is to 
 - [Main function - 0 terminated](https://github.com/simon-hrabec/Algolab2020/tree/main/code%20snippets#Main-function---0-terminated)
 - [Kernel conversions](https://github.com/simon-hrabec/Algolab2020/tree/main/code%20snippets#Kernel-conversions)
 - [CGAL round down](https://github.com/simon-hrabec/Algolab2020/tree/main/code%20snippets#CGAL-round-down)
+- [CGAL round uo](https://github.com/simon-hrabec/Algolab2020/tree/main/code%20snippets#CGAL-round-uo)
 - [CGAL intersections](https://github.com/simon-hrabec/Algolab2020/tree/main/code%20snippets#CGAL-intersections)
 - [Min Circle](https://github.com/simon-hrabec/Algolab2020/tree/main/code%20snippets#Min-Circle)
 - [Linear programming](https://github.com/simon-hrabec/Algolab2020/tree/main/code%20snippets#Linear-programming)
