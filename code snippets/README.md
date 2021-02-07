@@ -13,6 +13,11 @@ The templetized version of the provided round down function for CGAL types (Gmpq
 
 Attibution: Rewritten code from the lecture
 
+## [CGAL round uo](round_up.cpp)
+The same as round down but instead rounding up.
+
+Attibution: Modified code from the lecture
+
 ## [CGAL intersections](cgal_intersections.cpp)
 When two object intersects the result can be of several types. It requires the usage of `boost::get`. This code can be used for intersections of segment/ray. For different objects it needs to be extended accordingly but the structure can remain the same.
 
