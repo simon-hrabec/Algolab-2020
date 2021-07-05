@@ -57,6 +57,7 @@ void solve(const int line_count, const int dimension_count) {
 }
 
 int main() {
+  std::ios_base::sync_with_stdio(false);
   while(true) {
     const int n = load<int>();
     if (n == 0) {

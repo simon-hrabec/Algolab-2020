@@ -92,7 +92,7 @@ void solve(const int nr_obstacles) {
 }
 
 int main() {
-  std::ios::sync_with_stdio(false);
+  std::ios_base::sync_with_stdio(false);
   while(true) {
     int nr_obstacles; std::cin >> nr_obstacles;
     if (nr_obstacles == 0) {

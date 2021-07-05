@@ -69,7 +69,7 @@ void solve() {
 }
 
 int main() {
-  std::ios::sync_with_stdio(false);
+  std::ios_base::sync_with_stdio(false);
   int N; std::cin >> N;
   while(N--) {
     solve();

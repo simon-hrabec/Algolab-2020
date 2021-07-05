@@ -53,7 +53,7 @@ void solve(const int nr_points){
 }
 
 int main() {
-  std::ios::sync_with_stdio(false);
+  std::ios_base::sync_with_stdio(false);
   while(true) {
     int nr_points;
     std::cin >> nr_points;

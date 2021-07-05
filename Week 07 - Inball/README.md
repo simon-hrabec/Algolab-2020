@@ -15,5 +15,5 @@ We are given N lines (D-1 dimensional planes to be exact). Good initial observat
 
 # Running time
     Test set 1 (35 pts / 2 s) - 0.011s
-    Test set 2 (35 pts / 2 s) - 0.103s
-    Test set 3 (30 pts / 2 s) - 0.882s
+    Test set 2 (35 pts / 2 s) - 0.101s
+    Test set 3 (30 pts / 2 s) - 0.863s

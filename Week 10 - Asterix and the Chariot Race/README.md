@@ -27,7 +27,7 @@ We run DFS to propagate the values from the bottom of the tree upwards. We now a
 We get 3 values for the root. We might be tempted to pick the selected value, but the covered is enough. It is sufficient to fulfil the problem statement (all nodes covered, including 0 city) and it might be cheaper.
 
 # Running time
-    Test set 1 (25 pts / 4 s) - 0.174s
-    Test set 2 (25 pts / 4 s) - 0.189s
-    Test set 3 (25 pts / 4 s) - 0.19s
-    Test set 4 (25 pts / 4 s) - 2.934s
+    Test set 1 (25 pts / 4 s) - 0.073s
+    Test set 2 (25 pts / 4 s) - 0.079s
+    Test set 3 (25 pts / 4 s) - 0.08s
+    Test set 4 (25 pts / 4 s) - 1.197s
