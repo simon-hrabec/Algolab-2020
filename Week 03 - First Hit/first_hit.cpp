@@ -100,4 +100,5 @@ int main() {
     }
     solve(nr_obstacles);
   }
+  return 0;
 }

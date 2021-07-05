@@ -82,4 +82,5 @@ int main() {
     }
     solve(nr_cells);
   }
+  return 0;
 }

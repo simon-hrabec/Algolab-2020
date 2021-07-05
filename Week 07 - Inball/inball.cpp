@@ -66,4 +66,5 @@ int main() {
     const int d = load<int>();
     solve(n, d);
   }
+  return 0;
 }

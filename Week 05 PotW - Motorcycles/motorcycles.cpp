@@ -74,4 +74,5 @@ int main() {
   while(N--) {
     solve();
   }
+  return 0;
 }

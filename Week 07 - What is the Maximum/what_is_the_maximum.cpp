@@ -82,4 +82,5 @@ int main() {
       std::cout << val << std::endl;
     }
   }
+  return 0;
 }

@@ -68,4 +68,5 @@ int main() {
   while(T--) {
     solve();
   }
+  return 0;
 }
