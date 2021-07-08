@@ -29,3 +29,4 @@ The triangulation need to use vertices with indices  `CGAL::Triangulation_vertex
     Test set 1 (20 pts / 1 s) - 0.016s
     Test set 2 (20 pts / 1 s) - 0.086s
     Test set 3 (20 pts / 1 s) - 0.027s
+    Test set 4 (20 pts / 1 s) - 0.262s
