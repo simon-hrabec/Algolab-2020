@@ -53,7 +53,7 @@ void solve(const int nr_cells) {
         if (!t.is_infinite(vertex_c)) {
           closest_squared_die_distance = std::min(closest_squared_die_distance, CGAL::squared_distance(vertex->point(), vertex_c->point()));
         }
-      } while (++vertex_c != done);      
+      } while (++vertex_c != done);
     }
 
     min_distances.push_back(std::min(die_distance-0.5, (std::sqrt(closest_squared_die_distance)-1)/2));

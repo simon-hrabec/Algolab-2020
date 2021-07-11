@@ -8,14 +8,14 @@
 #include <boost/graph/find_flow_cost.hpp>
 
 namespace distance{
-  using graph = boost::adjacency_list< 
-    boost::vecS, 
-    boost::vecS, 
+  using graph = boost::adjacency_list<
+    boost::vecS,
+    boost::vecS,
     boost::undirectedS,
     boost::no_property,
     boost::property<boost::edge_weight_t, int>
   >;
-  using weight_map = boost::property_map<graph, boost::edge_weight_t>::type;  
+  using weight_map = boost::property_map<graph, boost::edge_weight_t>::type;
 }
 
 namespace flow {
@@ -125,7 +125,7 @@ int main() {
   int T;
   std::cin >> T;
   while(T--) {
-    solve();  
+    solve();
   }
   return 0;
 }

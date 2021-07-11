@@ -19,7 +19,7 @@ The problem has a solution that is a subset of the given Jedi (Jedi is supposedl
 In the problem there is stated (definitely not by accident) that there is a segment that is covered by at most 10 Jedi knights. Knowing this we look for a segment that is occupied by the least Jedi (or by at most 10) and then we try all the Jedi in this segment as the starting Jedi for the greedy algorithm.
 
 ## The coding challenge
-The most difficult part of this problem is to code everything up. To deal with the circular array it is either required to make the algorithm work with the jump from some number back to 0/roll over or it is possible to disconnect the array somewhere and move the elements before the place of disconnection back to the end. I used the later approach. 
+The most difficult part of this problem is to code everything up. To deal with the circular array it is either required to make the algorithm work with the jump from some number back to 0/roll over or it is possible to disconnect the array somewhere and move the elements before the place of disconnection back to the end. I used the later approach.
 
 # Running time
     Test set 1 (30 pts / 1 s) - 0.005s

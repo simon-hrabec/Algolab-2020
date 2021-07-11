@@ -17,7 +17,7 @@ echo "## Featured solutions"
 echo "| Week | Problem of the Week | 1st problem | 2nd problem | 3rd problem | 4th problem |"
 echo "| --- | --- | --- | --- | --- | --- |"
 
-for i in $(seq -w 01 14); do 
+for i in $(seq -w 01 14); do
 	if ls -1 | grep "$i" > /dev/null; then
 		#First handle POTW
 		echo -n "| $(echo $i | sed 's|^0*||') | "

@@ -1,13 +1,13 @@
 # Placing Knights
-This problem is not difficult in terms of coding (unlike "Attack of the Clones"), however it does not have a straightforward solution. Therefore it is necessary to brainstorm and try different techniques/approaches. 
+This problem is not difficult in terms of coding (unlike "Attack of the Clones"), however it does not have a straightforward solution. Therefore it is necessary to brainstorm and try different techniques/approaches.
 - Modeling the problem
-- Counting collisions 
+- Counting collisions
 - Constructing the graph
 
 ## Modeling the problem
 When thinking about how to approach the problem, one might remember that the recent topics in the course were graphs and flows, therefore it might be logical to try it first. Looking at the input dimension we see that the size of the chessboard is at most 2^6=64 and the number of fields will be 2^12=4096, which is might be feasible for some types of graphs. Another important observation to make is that knights on black fields can collide on with knights on white fields and vice versa.
 
-## Counting collisions 
+## Counting collisions
 Sadly, we cannot use the flow information to count the possible number of knights to place on the board. But we could go the other way around and calculate the number of knight that cannot be placed on the board due to collisions. And then just taking the number of valid fields (no hole) and substract the collisions.
 
 ## Constructing the graph

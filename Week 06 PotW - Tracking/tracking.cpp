@@ -47,7 +47,7 @@ void solve(){
   }
 
   std::vector<int> distance_map(total_vertex_count);
-  boost::dijkstra_shortest_paths(g, start, 
+  boost::dijkstra_shortest_paths(g, start,
     boost::distance_map(boost::make_iterator_property_map(std::begin(distance_map), boost::get(boost::vertex_index, g)
   )));
 

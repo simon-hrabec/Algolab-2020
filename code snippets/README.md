@@ -37,7 +37,7 @@ When working with BGL or CGAL sometimes we are provided with function that retur
     for(auto [edge_it, edge_it_end] = boost::edges(G); edge_it != edge_it_end; ++edge_it) {
     ...
     }
-    
+
 or declaring the iterators (which means writing explicitly their type or using some kind of decltype)
 
     graph_traits<Graph>::edge_iterator ei, ei_end;

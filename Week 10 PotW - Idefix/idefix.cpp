@@ -41,24 +41,24 @@ void solve() {
   const std::size_t bone_count = load<int>();
   const double sradius = load<double>();
   const int more_bones_count = load<int>();
- 
+
   std::vector<IPoint> trees;
-  std::vector<int> tree_has_bones(tree_count); 
+  std::vector<int> tree_has_bones(tree_count);
   std::vector<universal_edge> edges;
   boost::disjoint_sets_with_storage<> uf(tree_count);
-  
+
   trees.reserve(tree_count);
   for(Index i = 0; i < tree_count; i++) {
     const Point tree = loadp();
     trees.emplace_back(tree, i);
   }
-  
+
   Triangulation t(std::begin(trees), std::end(trees));
-  
+
   // Create bone edges and calculate bone count for trees
   for(Index i = 0; i < bone_count; i++) {
     const Point bone = loadp();
-    
+
     Index idx = t.nearest_vertex(bone)->info();
     const double dis = 4*CGAL::squared_distance(bone, trees[idx].first);
     edges.emplace_back(idx, idx, dis, true);
@@ -71,46 +71,46 @@ void solve() {
   for (auto e = t.finite_edges_begin(); e != t.finite_edges_end(); ++e) {
     Index i1 = e->first->vertex((e->second+1)%3)->info();
     Index i2 = e->first->vertex((e->second+2)%3)->info();
-    
+
     if (i1 > i2) {
       std::swap(i1, i2);
     }
-    
+
     const auto &p1 = trees[i1].first;
     const auto &p2 = trees[i2].first;
-    
+
     const double dis = CGAL::squared_distance(p1, p2);
-    
+
     edges.emplace_back(i1, i2, dis, false);
-    
+
     if (dis <= sradius) {
       Index c1 = uf.find_set(i1);
       Index c2 = uf.find_set(i2);
-      
+
       if (c1 != c2) {
         uf.link(c1, c2);
         tree_has_bones[uf.find_set(i1)] = tree_has_bones[c1] + tree_has_bones[c2];
       }
     }
   }
-  
+
   const int max_reachable_bones = *max_element(std::begin(tree_has_bones), std::end(tree_has_bones));
   uint64_t min_required_radius = 0;
-  
+
   std::sort(std::begin(edges), std::end(edges), [](const universal_edge& e1, const universal_edge& e2) {
     return std::get<2>(e1) < std::get<2>(e2);
   });
-  
+
   uf = boost::disjoint_sets_with_storage<>(tree_count);
   std::fill(std::begin(tree_has_bones), std::end(tree_has_bones), 0);
-  
+
   // Iterate from shortest edges to find minimal required radius
   for(const universal_edge &e : edges) {
     const Index i1 = std::get<0>(e);
     const Index i2 = std::get<1>(e);
     const double dis = std::get<2>(e);
     const bool is_bone = std::get<3>(e);
-    
+
     if (is_bone) {
       Index c1 = uf.find_set(i1);
       tree_has_bones[c1]++;
@@ -121,12 +121,12 @@ void solve() {
     } else {
       Index c1 = uf.find_set(i1);
       Index c2 = uf.find_set(i2);
-      
+
       if (c1 != c2) {
         uf.link(c1, c2);
         Index cnew = uf.find_set(i1);
         tree_has_bones[cnew] = tree_has_bones[c1] + tree_has_bones[c2];
-        
+
         if (tree_has_bones[cnew] >= more_bones_count) {
           min_required_radius = dis;
           break;
@@ -134,7 +134,7 @@ void solve() {
       }
     }
   }
-  
+
   std::cout << max_reachable_bones << " " << min_required_radius << std::endl;
 }
 

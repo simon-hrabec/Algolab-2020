@@ -10,7 +10,7 @@ T load(){
   return val;
 }
 
-std::array<std::pair<int, int>, 100> drinks; // price, litres 
+std::array<std::pair<int, int>, 100> drinks; // price, litres
 std::array<std::array<std::tuple<int,int,bool>, 10001>, 101> dp; // price, count, used
 
 void solve() {

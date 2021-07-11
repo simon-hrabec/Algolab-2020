@@ -5,7 +5,7 @@
 void solve(){
   int jedi_count, segment_count; std::cin >> jedi_count >> segment_count;
   const int edge_count = jedi_count*2;
-  
+
   // Load data
   int used = 0;
   std::vector<std::pair<int64_t,int64_t>> segments(jedi_count); // to, from
@@ -16,25 +16,25 @@ void solve(){
     b -= 1;
     segments[i].second = a;
     segments[i].first = b;
-    
+
     edges[2*i] = {a, false};
     edges[2*i+1] = {b, true};
-    
+
     // already count jedi that go over the end
     if (b < a) {
       used++;
     }
   }
-  
+
   std::sort(std::begin(edges), std::end(edges));
-  
+
   // Include jedi that start at 0
   int64_t position = 0;
   while(position < edge_count && edges[position].first == 0 && edges[position].second == false) {
     used++;
     position++;
   }
-  
+
   // Find best start (least used)
   int best_used = used;
   int64_t best_position = 0;
@@ -44,17 +44,17 @@ void solve(){
       used++;
       position++;
     }
-    
+
     if (used < best_used) {
       best_used = used;
       best_position = current;
     }
-    
+
     while(position < edge_count && edges[position].first == current) {
       used--;
       position++;
     }
-    
+
     if ((position < edge_count && edges[position].first != current + 1) || (position == edge_count && current+1 < segment_count)) {
       if (used < best_used) {
         best_used = used;
@@ -62,7 +62,7 @@ void solve(){
       }
     }
   }
-  
+
   // Find jedi present in least occupied sector
   std::vector<int64_t> possible_starts = {best_position};
   for(const auto &s : segments) {
@@ -87,13 +87,13 @@ void solve(){
       if (p.second > p.first) {
         p.first += segment_count;
       }
-      
+
       if (p.second <= elem) {
-        p.first += segment_count; 
+        p.first += segment_count;
         p.second += segment_count;
       }
     }
-    
+
     std::sort(std::begin(shifted), std::end(shifted));
     int picked = 0;
     int64_t pos = elem;
@@ -105,7 +105,7 @@ void solve(){
     }
     result = std::max(result, picked);
   }
-  
+
   std::cout << result << std::endl;
 }
 

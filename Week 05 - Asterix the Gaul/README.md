@@ -3,7 +3,7 @@ This problem is hard. And by hard I mean it is not easy to get 100% and also tha
 
 - Iterating over possible subsets of moves
 - Calculating solution
-- Caching best distance for #moves 
+- Caching best distance for #moves
 - Split & List
 
 ## Iterating over possible subsets of moves
@@ -17,7 +17,7 @@ We then save the best possible (minimum over required potions) result and print 
 ## Caching best distance for #moves
 It is possible to note that if we have remaining distance 10 using 5 moves and another case having remaining distance 15 using 5 moves the later is suboptimal and can be discarded. Hence, we can create an array representing smallest distance achievable using N moves. After we fill this array (iterating over all subset) we do the binary search only for each element in this array (which is at most 30) to save some time.
 
-## Split & List 
+## Split & List
 The first simple DFS code solution does not pass the 4th test set. The solution is to use the Split & List technique. Splitting the moves into 2 parts, computing all subset for but parts and them combining these. I then sort the data (for efficient lookups) and remove suboptimal entries (6 remaining distance with 4 remaining time is suboptimal to 5 distance and 4 time). I consider solutions using different number of moves separately. For each entry in the first half I do I lookup (using binary search) in the second half (in each array containing N moves). By this I fill again the array with best distance for number of moves and proceed the same way as in the simple DFS solution.
 
 ## Possible improvements

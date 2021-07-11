@@ -24,8 +24,8 @@ T load() {
 }
 
 void solve(const int nutrient_count, const int food_count) {
-  Program lp(CGAL::SMALLER, false, 0, false, 0); 
-  
+  Program lp(CGAL::SMALLER, false, 0, false, 0);
+
   for(int i = 0; i < nutrient_count; i++) {
     const int min = load<int>();
     const int max = load<int>();
@@ -33,7 +33,7 @@ void solve(const int nutrient_count, const int food_count) {
     lp.set_b(2*i, -min);
     lp.set_b(2*i+1, max);
   }
-  
+
   for(int i = 0; i < food_count; i++) {
     const int price = load<int>();;
 
@@ -42,7 +42,7 @@ void solve(const int nutrient_count, const int food_count) {
 
     for(int j = 0; j < nutrient_count; j++) {
       const int content = load<int>();;
-      
+
       lp.set_a(i, 2*j, -content);
       lp.set_a(i, 2*j+1, content);
     }

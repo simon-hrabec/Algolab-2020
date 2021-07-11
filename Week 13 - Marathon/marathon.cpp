@@ -29,7 +29,7 @@ class edge_adder {
     r_map[e] = rev_e;
     r_map[rev_e] = e;
     w_map[e] = cost;
-    w_map[rev_e] = cost; 
+    w_map[rev_e] = cost;
   }
 };
 
@@ -63,7 +63,7 @@ void solve() {
     const auto nr_streets = load<int>();
     const auto start = load<int>();
     const auto finish = load<int>();
-    
+
     graph G(nr_cities);
     edge_adder adder(G);
     auto capacity_map = boost::get(boost::edge_capacity, G);
@@ -103,7 +103,7 @@ int main() {
   int T;
   std::cin >> T;
   while(T--) {
-    solve();  
+    solve();
   }
   return 0;
 }

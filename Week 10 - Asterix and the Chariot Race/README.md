@@ -13,7 +13,7 @@ Problems with trees can sometimes be forumalted recursively as the subproblems a
 The trick to this solution lies in realising we need to define 3 states for a node and its subtree.
 1. First is the (optimal) solution for this subtree if the root of this subtree is picked. We might find it useful to have some direct descendant to be picked if the current node has expensive value and it would be better if not picked.
 2. Second it the solution in which the subtree has a root that is not picked, but is covered by some of its direct descendants. In this case it cannot provide cover for the current node but on the other hand it also does not require it. Hence we could consider a case when all direct descendants are covered and the current node might be cover by its parent.
-3. Third is the solution if the current node is not covered. We need to consider this case as well because if the parent should be picked then it would makde this node acutally covered. 
+3. Third is the solution if the current node is not covered. We need to consider this case as well because if the parent should be picked then it would makde this node acutally covered.
 
 These are the 3 values of the optimal solutions for the subproblems that we need to move upwards in the tree and then combine them.
 

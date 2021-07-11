@@ -41,7 +41,7 @@ template <typename T>
 T load_geometric_object(){
   const Point p1 = load_point();
   const Point p2 = load_point();
-  return T{p1, p2}; 
+  return T{p1, p2};
 }
 
 Segment coordinates_to_segment(const std::array<int64_t, 4> &coordinates) {

@@ -40,28 +40,28 @@ void solve() {
   const int board_size = load<int>();
   const int field_count = board_size*board_size;
   const int outgoing_offset = field_count;
-  
-  graph G(2*field_count);  
+
+  graph G(2*field_count);
   edge_adder adder(G);
   const vertex_desc source = boost::add_vertex(G);
   const vertex_desc target = boost::add_vertex(G);
-  
+
   const auto add_if_in_range = [board_size, outgoing_offset, &adder](const int from_idx, const int to_x, const int to_y){
     if (to_x >= 0 && to_x < board_size && to_y >= 0 && to_y < board_size) {
       adder.add_edge(from_idx, to_x*board_size + to_y + outgoing_offset, 1);
     }
   };
-  
+
   int valid_field_count = 0;
-  
+
   for (int i = 0; i < board_size; i++){
     for (int j = 0; j < board_size; j++){
       const int field_idx = i*board_size + j;
       const bool black_field = (i+j) & 1;
-      
+
       const bool present = load<bool>();
       valid_field_count += present;
-      
+
       if (present) {
         if (black_field) {
           adder.add_edge(source, field_idx, 1);
@@ -69,7 +69,7 @@ void solve() {
           adder.add_edge(field_idx+outgoing_offset, target, 1);
         }
       }
-      
+
       if (black_field) {
         add_if_in_range(field_idx, i-1, j-2);
         add_if_in_range(field_idx, i-2, j-1);
@@ -82,7 +82,7 @@ void solve() {
       }
     }
   }
-  
+
   const int flow = boost::push_relabel_max_flow(G, source, target);
   std::cout << (valid_field_count-flow) << std::endl;
 }

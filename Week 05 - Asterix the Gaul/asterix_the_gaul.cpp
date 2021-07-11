@@ -69,14 +69,14 @@ void sort_and_remove_suboptimal(storage_array &arr) {
     });
 
     int shift = 0;
-    int64_t min_distance = row.back().second; 
+    int64_t min_distance = row.back().second;
     for(int i = row.size()-2; i >= 0; i--) {
       if (row[i].second >= min_distance) {
         shift++;
       } else {
         row[i+shift] = row[i];
         min_distance = row[i].second;
-      } 
+      }
     }
 
     if (shift > 0) {

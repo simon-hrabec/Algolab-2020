@@ -51,7 +51,7 @@ int main() {
     const int a = load<int>();
     const int b = load<int>();
 
-    Program lp(CGAL::SMALLER, false, 0, false, 0); 
+    Program lp(CGAL::SMALLER, false, 0, false, 0);
     if (problem_type == 1) {
       lp.set_l(X, true, 0);
       lp.set_l(Y, true, 0);
