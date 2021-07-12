@@ -10,7 +10,7 @@ echo_link() {
 	PROBLEM_PDF_PATH="${PROBLEM_PATH}/description.pdf"
 	PROBLEM_NAME="$(echo "$1" | sed -E 's|^.*[[:digit:]][[:digit:]]( PotW)? - ||g')"
 	# echo -n "<a href=\"${PROBLEM_PDF_PATH}\"><img src=\"https://i2.wp.com/www.uei.com/wp-content/uploads/2017/10/pdf-icon.png\" height=\"18\"></a> "
-	echo -n "[${PROBLEM_NAME}](${PROBLEM_PATH})"
+	echo -n " [${PROBLEM_NAME}](${PROBLEM_PATH})"
 }
 
 echo "## Featured solutions"
@@ -18,21 +18,21 @@ echo "| Week | Problem of the Week | 1st problem | 2nd problem | 3rd problem | 4
 echo "| --- | --- | --- | --- | --- | --- |"
 
 for i in $(seq -w 01 14); do
-	if ls -1 | grep "$i" > /dev/null; then
+	if ls -1 problems/ | grep "$i" > /dev/null; then
 		#First handle POTW
-		echo -n "| $(echo $i | sed 's|^0*||') | "
-		if ls -1 | grep "$i PotW" > /dev/null; then
-			echo_link "$(ls -1 | grep "$i PotW" | head -1)"
+		echo -n "| $(echo $i | sed 's|^0*||') |"
+		if ls -1 problems/ | grep "$i PotW" > /dev/null; then
+			echo_link "$(ls -1 problems/ | grep "$i PotW" | head -1)"
 		fi
-		echo -n " | "
+		echo -n " |"
 
 		# Handle problem 1-4
 		for j in $(seq 1 4); do
-			PROBLEM="$(ls -1 | grep "$i - " | sed "${j}q;d")"
+			PROBLEM="$(ls -1 problems/ | grep "$i - " | sed "${j}q;d")"
 			if [ ! -z "$PROBLEM" ]; then
 				echo_link "$PROBLEM"
 			fi
-			echo -n " | "
+			echo -n " |"
 		done
 		printf "\n"
 	fi
