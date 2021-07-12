@@ -3,7 +3,7 @@
 # Seachers for all directories/folder containing problems
 # For each week (if any solution is present) generates a line in the solution table
 
-REPO_PATH="${1:-https://github.com/simon-hrabec/Algolab2020/tree/main/}"
+REPO_PATH="${1:-https://github.com/simon-hrabec/Algolab2020/tree/main/problems/}"
 
 echo_link() {
 	PROBLEM_PATH="${REPO_PATH}$(echo "$1" | sed 's| |%20|g')"
