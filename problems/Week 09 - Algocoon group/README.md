@@ -1,4 +1,4 @@
-# Algocoon group
+# Algocoon Group
 As well as other problems for this week this one is about graphs and paths/flows. Algocoon is extremely easy in terms of coding, but it compensates for it by requiring deliberate though about the approach to take.
 - Modeling the problem
 - Counting collisions 
