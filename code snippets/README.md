@@ -13,7 +13,7 @@ The templetized version of the provided round down function for CGAL types (Gmpq
 
 Attibution: Rewritten code from the lecture
 
-## [CGAL round uo](round_up.cpp)
+## [CGAL round up](round_up.cpp)
 The same as round down but instead rounding up.
 
 Attibution: Modified code from the lecture
