@@ -1,4 +1,3 @@
-
 # The Iron Islands - solution
 This problem is rather easy. After initial analysis and breaking the problem into 2 subcases it is just a little bit of quite straightforward coding using quite well know concepts. The explanation of the solution is split into the following chapters:
 - Viable cases

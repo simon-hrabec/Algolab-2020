@@ -1,4 +1,4 @@
-# Idéfix
+# Idéfix - solution
 Idéfix is truly a fun problem to solve. It has moderately difficult description, it contains geometry, requires use of multiple data structures and is not tricky in terms of coding. Moreover the solution is somehow straightforward. The problem is somehow similar to "Hand" from week 11.
 - Input format
 - Problem classification

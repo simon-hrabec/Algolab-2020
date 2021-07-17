@@ -1,4 +1,4 @@
-# Ant Challenge
+# Ant Challenge - solution
 Yet another easy problem to solve with a little bit of coding and BGL exploration and combination of few algorithms.
 - Specie's networks
 - Unified network

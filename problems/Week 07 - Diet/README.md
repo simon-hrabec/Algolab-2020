@@ -1,4 +1,4 @@
-# Diet
+# Diet - solution
 The main topic of week 7 was the introduction of dynamic programing and its solving with CGAL. After the toy assignment "What is the Maximum", which was basically about understanding the syntax, the Diet problem is the next problem in the progression, but still an easy and pretty straightforward one.
 - Translating the problem to LP
 - Minimum and maximum

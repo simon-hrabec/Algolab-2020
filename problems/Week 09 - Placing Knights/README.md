@@ -1,4 +1,4 @@
-# Placing Knights
+# Placing Knights - solution
 This problem is not difficult in terms of coding (unlike "Attack of the Clones"), however it does not have a straightforward solution. Therefore it is necessary to brainstorm and try different techniques/approaches.
 - Modeling the problem
 - Counting collisions

@@ -1,4 +1,4 @@
-# Important Bridges
+# Important Bridges - solution
 Week 4 is the week of BGL. This is one of the problems to make people more familiar with BGL and its various parts. Even though this problem could be coded from scratch it is expected to take advantage of BGL and its algorithms.
 - Biconnected components
 - Counting edges

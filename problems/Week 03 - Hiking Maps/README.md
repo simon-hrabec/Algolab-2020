@@ -1,4 +1,3 @@
-
 # Hiking Maps - solution
 Hiking Maps is the last problem of the weekly problem set fully designated to CGAL geometry and its intricacies. It requires a little thought regarding which kernel (EPIC/EPEC) to use and then the combination of 2 subtasks - finding which maps contain which legs and then finding the shortest subsequence of maps that contain all the legs. The explanation of the solution is split into the following chapters:
 - Input size
