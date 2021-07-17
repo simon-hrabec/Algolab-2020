@@ -13,7 +13,7 @@ echo_link() {
 	echo -n " [${PROBLEM_NAME}](${PROBLEM_PATH})"
 }
 
-echo "## Featured solutions"
+# echo "## Featured solutions - ordered by weeks"
 echo "| Week | Problem of the Week | 1st problem | 2nd problem | 3rd problem | 4th problem |"
 echo "| --- | --- | --- | --- | --- | --- |"
 

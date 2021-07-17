@@ -13,7 +13,8 @@ How to use this repository:
 - If stuck and gave the problem already some time read the minimal amount of problem solution to get yourself unstuck
 - After finishing the task check the solutions for alternative ways to approach it
 - Check the code if you just wanna compare the code of your solution and see how other people write C++
-## Featured solutions
+
+## Featured solutions - ordered by weeks
 | Week | Problem of the Week | 1st problem | 2nd problem | 3rd problem | 4th problem |
 | --- | --- | --- | --- | --- | --- |
 | 3 | | [Antenna](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2003%20-%20Antenna) | [First Hit](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2003%20-%20First%20Hit) | [Hiking Maps](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2003%20-%20Hiking%20Maps) | [Hit](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2003%20-%20Hit) |
@@ -28,7 +29,7 @@ How to use this repository:
 | 12 | [The Iron Islands](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2012%20PotW%20-%20The%20Iron%20Islands) | [Car Sharing](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2012%20-%20Car%20Sharing) | [Hong Kong](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2012%20-%20Hong%20Kong) | [India](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2012%20-%20India) | [Moving Books](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2012%20-%20Moving%20Books) |
 | 13 | | [Evolution](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2013%20-%20Evolution) | [Marathon](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2013%20-%20Marathon) | [Punch](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2013%20-%20Punch) | [Sith](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2013%20-%20Sith) |
 
-## Techniques/algorithms/data structures
+## Featured solutions - ordered by technique/algorithm/data structure
 - BFS - [W13/Sith](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2013%20-%20Sith)
 - Biconnected Components - [W04/Important Bridges](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2004%20-%20Important%20Bridges)
 - Binary Search - [W05/Asterix the Gaul](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2005%20-%20Asterix%20the%20Gaul) [W12/India](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2012%20-%20India) [W12/Moving Books](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2012%20-%20Moving%20Books) [W13/Evolution](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2013%20-%20Evolution) [W13/Marathon](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2013%20-%20Marathon) [W13/Sith](https://github.com/simon-hrabec/Algolab2020/tree/main/problems/Week%2013%20-%20Sith)

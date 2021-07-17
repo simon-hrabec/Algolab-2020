@@ -8,7 +8,8 @@ REPO_PATH="${1:-https://github.com/simon-hrabec/Algolab2020/tree/main/problems/}
 
 cd problems/
 
-echo "## Techniques/algorithms/data structures"
+# echo "## Featured solutions - ordered by technique/algorithm/data structure"
+# echo "## "
 find . -type f -name "tags" -exec cat {} \; | sort | uniq | while read -r tag; do
 	echo -n "- ${tag} -"
 	grep -rl "$tag" */tags | while read -r problem; do
