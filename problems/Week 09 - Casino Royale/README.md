@@ -1,5 +1,5 @@
 # Casino Royale - solution
-This is a graph problem. Easy on the coding side but quite difficult in terms of crafting up the solution. It includes flows and the solution can be gained by computing max-flow-min-cost. Further focus is dedicated to the two available algorithms within BGL - `push_relabel_max_flow` in combination with `cycle_canceling` and the faster but more  restrictive (as the name suggest - only nonnegative weights) `boost::successive_shortest_path_nonnegative_weights` algorithm - and how to get rid of negative weights.
+This is a graph problem. Easy on the coding side but quite difficult in terms of crafting up the solution. It includes flows and the solution can be gained by computing max-flow-min-cost. Further focus is dedicated to the two available algorithms within BGL - `boost::push_relabel_max_flow` in combination with `boost::cycle_canceling` and the faster but more  restrictive (as the name suggest - only nonnegative weights) `boost::successive_shortest_path_nonnegative_weights` algorithm - and how to get rid of negative weights.
 - Problem input size
 - Unit of flow
 - Modeling the problem
