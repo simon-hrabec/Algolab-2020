@@ -5,11 +5,10 @@
 # Generates README list of those with links
 
 REPO_PATH="${1:-https://github.com/simon-hrabec/Algolab2020/tree/main/problems/}"
+PROBLEMS_DIR=$(git rev-parse --show-toplevel)"/problems/"
 
-cd problems/
+cd ${PROBLEMS_DIR}
 
-# echo "## Featured solutions - ordered by technique/algorithm/data structure"
-# echo "## "
 find . -type f -name "tags" -exec cat {} \; | sort | uniq | while read -r tag; do
 	echo -n "- ${tag} -"
 	grep -rl "$tag" */tags | while read -r problem; do

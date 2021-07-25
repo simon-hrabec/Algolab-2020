@@ -4,6 +4,7 @@
 # For each week (if any solution is present) generates a line in the solution table
 
 REPO_PATH="${1:-https://github.com/simon-hrabec/Algolab2020/tree/main/problems/}"
+PROBLEMS_DIR=$(git rev-parse --show-toplevel)"/problems/"
 
 echo_link() {
 	PROBLEM_PATH="${REPO_PATH}$(echo "$1" | sed 's| |%20|g')"
@@ -13,22 +14,21 @@ echo_link() {
 	echo -n " [${PROBLEM_NAME}](${PROBLEM_PATH})"
 }
 
-# echo "## Featured solutions - ordered by weeks"
 echo "| Week | Problem of the Week | 1st problem | 2nd problem | 3rd problem | 4th problem |"
 echo "| --- | --- | --- | --- | --- | --- |"
 
 for i in $(seq -w 01 14); do
-	if ls -1 problems/ | grep "$i" > /dev/null; then
+	if ls -1 "${PROBLEMS_DIR}" | grep "$i" > /dev/null; then
 		#First handle POTW
 		echo -n "| $(echo $i | sed 's|^0*||') |"
-		if ls -1 problems/ | grep "$i PotW" > /dev/null; then
-			echo_link "$(ls -1 problems/ | grep "$i PotW" | head -1)"
+		if ls -1 "${PROBLEMS_DIR}" | grep "$i PotW" > /dev/null; then
+			echo_link "$(ls -1 "${PROBLEMS_DIR}" | grep "$i PotW" | head -1)"
 		fi
 		echo -n " |"
 
 		# Handle problem 1-4
 		for j in $(seq 1 4); do
-			PROBLEM="$(ls -1 problems/ | grep "$i - " | sed "${j}q;d")"
+			PROBLEM="$(ls -1 "${PROBLEMS_DIR}" | grep "$i - " | sed "${j}q;d")"
 			if [ ! -z "$PROBLEM" ]; then
 				echo_link "$PROBLEM"
 			fi
