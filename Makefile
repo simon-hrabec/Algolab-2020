@@ -6,13 +6,16 @@ rwildcard=$(foreach d,$(wildcard $(1:=/*)),$(call rwildcard,$d,$2) $(filter $(su
 CHAPTERS := $(call rwildcard,$(CHAPTER_DIR),*Makefile)
 
 all: README.md
-	./change-newlines.sh
+	@./change-newlines.sh
+	@echo "Newlines changed to unix style!"
 
-README.md: $(CHAPTERS)
-	cat $(CHAPTER_DIR)/order | sed 's|^|"'"$(CHAPTER_DIR)"/'|' | sed 's|$$|/README.md"|' | xargs cat > README.md
+README.md: $(CHAPTERS) FORCE
+	@cat $(CHAPTER_DIR)/order | sed 's|^|"'"$(CHAPTER_DIR)"/'|' | sed 's|$$|/README.md"|' | xargs cat > README.md
+	@echo "README.md assembled!"
 
 FORCE:
 
 $(CHAPTERS): FORCE
-	echo $(subst Makefile,,$@)
-	@$(MAKE) --no-print-directory -C $(subst Makefile,,$@)
+	@echo $$(echo $@ | sed 's|[^/]*/\(.*\)/[^/]*|\1|') readme chapter generated!
+	@$(MAKE) --no-print-directory -s -C $(subst Makefile,,$@)
+
