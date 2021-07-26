@@ -16,6 +16,6 @@ README.md: $(CHAPTERS) FORCE
 FORCE:
 
 $(CHAPTERS): FORCE
-	@echo $$(echo $@ | sed 's|[^/]*/\(.*\)/[^/]*|\1|') readme chapter generated!
 	@$(MAKE) --no-print-directory -s -C $(subst Makefile,,$@)
+	@echo $$(echo $@ | sed 's|[^/]*/\(.*\)/[^/]*|\1|') readme chapter generated!
 
