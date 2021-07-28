@@ -1,5 +1,4 @@
 #include <iostream>
-#include <array>
 #include <vector>
 #include <limits>
 #include <algorithm>
