@@ -9,7 +9,7 @@ PROBLEMS_DIR=$(git rev-parse --show-toplevel)"/problems/"
 
 cd ${PROBLEMS_DIR}
 
-find . -type f -name "tags" -exec cat {} \; | sort | uniq | tr -d '\015' | while read -r tag; do
+find . -type f -name "tags" -exec cat {} \; | tr -d '\015' | sort | uniq | while read -r tag; do
 	echo -n "- ${tag} -"
 	grep -rl "$tag" */tags | while read -r problem; do
 		echo -n " [W$(echo "$problem" | sed 's/[^0-9]*//g' )/$(echo "$problem" | sed 's|.* - \(.*\)/tags|\1|g')]"
