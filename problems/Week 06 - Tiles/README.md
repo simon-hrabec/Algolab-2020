@@ -17,10 +17,10 @@ Both `boost::edmonds_maximum_cardinality_matching` and `boost::push_relabel_max_
     Test set 1 (40 pts / 0.200 s) - 0.0s
     Test set 2 (30 pts / 0.200 s) - 0.005s
     Test set 3 (20 pts / 0.200 s) - 0.022s
-    Test set 3 (10 pts / 0.200 s) - 0.003s
+    Test set 4 (10 pts / 0.200 s) - 0.003s
     
 # Running time - maximum flow
     Test set 1 (40 pts / 0.200 s) - 0.001s
     Test set 2 (30 pts / 0.200 s) - 0.013s
     Test set 3 (20 pts / 0.200 s) - 0.052s
-    Test set 3 (10 pts / 0.200 s) - 0.005s
+    Test set 4 (10 pts / 0.200 s) - 0.005s
