@@ -1,5 +1,5 @@
 # Even Pairs - solution
-First week is just practice round that does not contain any complicated problems, it does not require any libraries (CGAL/Boost) not fancy algorithms. Only few lines of code.
+First week is just practice round that does not contain any complicated problems, it does not require any libraries (CGAL/Boost) nor fancy algorithms. Only few lines of code.
 - Prefix sums oddness/evenness
 - Combining the prefix sums
 
