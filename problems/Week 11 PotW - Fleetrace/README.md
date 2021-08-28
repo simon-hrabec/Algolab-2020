@@ -6,7 +6,7 @@ In this problem we have boats, sailor and connection between them having a diffe
 - Could we use LP?
 
 ## Sailors and spectacle sum
-We are told in the problem sheet that the task is not to maximize the number of sailors but the spectacle coefficient sum. It is not hard to drive an emaple where the number of sailors/boats will in the race will be maximized but will be suboptimal in terms of the specatcle sum.
+We are told in the problem sheet that the task is not to maximize the number of sailors but the spectacle coefficient sum. It is not hard to derive an emaple where the number of sailors/boats will in the race will be maximized but will be suboptimal in terms of the specatcle sum.
 
 ## Trick 1 - Use all boats
 When se use the max-flow-min-cost we cannot minimize cost for unkown flow. However if we know the flow we can use something like an edge from source that will limit/cap the maximum flow and then we can ask about the cost. In here we can modify the problem that we always work with maximum possible flow. For each boat we add also an edge to sink with spectacle coefficient 0.
