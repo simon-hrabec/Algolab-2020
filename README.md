@@ -1,4 +1,4 @@
-# Algolab2020
+# Algolab 2020
 Solutions for problems given in ETH course [Algorithms Lab in Fall 2020](https://www.cadmo.ethz.ch/education/lectures/HS20/algolab/index.html). I was excplicitely disallowed to share the problems descriptions. If you want to get them try emailing the responsible faculty members or Googling to find it elsewhere. 
 
 The code for these problems is written with the following in mind:
