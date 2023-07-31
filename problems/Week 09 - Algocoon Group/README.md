@@ -1,8 +1,8 @@
 # Algocoon Group - solution
 As well as other problems for this week this one is about graphs and paths/flows. Algocoon is extremely easy in terms of coding, but it compensates for it by requiring deliberate though about the approach to take.
-- Modeling the problem
-- Counting collisions 
-- Constructing the graph
+- Min-cut and flows
+- Finding the proper pair 
+- Small improvement
 
 ## Min-cut and flows
 The problem talks about figures and limbs between them. We are looking for a price of the cheapest cut - note that the problem does not ask for the cut itself. If we knew the division of the two sets (one is figures for me, second for my friend) of the figures then we could pick any pair of figures - each from one set - and the maximum flow between them would be the minimal achievable cutting cost. Note that the maximum flow is not symmetric - the maximum flow between figures A and B does not necessarily equals the one between B and A. Therefore we might assume that both should be checked.
